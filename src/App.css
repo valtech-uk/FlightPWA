@@ -45,3 +45,7 @@ body {
     color: #FF6600;
     border: 2px solid #FF6600;
 }
+
+code {
+    font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New', monospace;
+}
