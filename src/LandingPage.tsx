@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
-import FlightDetails from './FlightDetails';
+//import FlightDetails from './FlightDetails';
 import logo from './logo.svg';
 import blueSkyImage from './blueskies.jpg';
 
@@ -16,8 +16,8 @@ const LandingPage = () => {
         e.preventDefault();
 
         // Replace 'lastName' and 'flightNumber' with the actual values entered by the user
-        const lastName = 'UserLastName'; // Replace with actual value
-        const flightNumber = 'Flight123'; // Replace with actual value
+      //  const lastName = 'UserLastName'; // Replace with actual value
+     //   const flightNumber = 'Flight123'; // Replace with actual value
 
         navigate('/flight-details');
     };
