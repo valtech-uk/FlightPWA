@@ -82,7 +82,7 @@ code {
     left: 0;
     width: 100%;
     height: 100%;
-    background-color: rgba(0, 0, 0, 0.6); /* Semi-transparent background */
+    background-color: rgba(0, 0, 0, 0.6);
     display: flex;
     justify-content: center;
     align-items: center;
@@ -94,30 +94,30 @@ code {
     box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.3);
     border-radius: 5px;
     text-align: center;
-    width: 80%; /* Set the width of the modal */
-    max-width: 400px; /* Set a maximum width for larger screens */
+    width: 80%;
+    max-width: 400px;
 }
 
 /* Style the form elements inside the modal */
 .registration-modal form {
-    text-align: left; /* Align form elements to the left */
+    text-align: left;
 }
 
 .registration-modal label {
-    display: block; /* Display labels as block elements for proper spacing */
-    margin-bottom: 10px; /* Add spacing below labels */
-    font-weight: bold; /* Make labels bold for clarity */
-    color: #333; /* Adjust label color */
+    display: block;
+    margin-bottom: 10px;
+    font-weight: bold;
+    color: #333;
 }
 
 .registration-modal input[type="text"] {
-    width: 100%; /* Make input fields span the entire width of the modal */
-    padding: 10px; /* Add padding for spacing within input fields */
-    margin-bottom: 20px; /* Add spacing between input fields */
-    border: 1px solid #ccc; /* Add a border for clarity */
-    border-radius: 5px; /* Apply border radius for rounded corners */
-    font-size: 16px; /* Adjust font size */
-    box-sizing: border-box; /* Include padding and border in width calculation */
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 20px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 16px;
+    box-sizing: border-box;
 }
 
 /* Style the "Submit" button to match the "Register" button */
@@ -126,7 +126,7 @@ code {
     padding: 10px 20px;
     border: none;
     border-radius: 5px;
-    margin-top: 20px; /* Add margin to separate it from the input fields */
+    margin-top: 20px;
     cursor: pointer;
     background-color: #FF6600;
     color: #FFFFFF;
@@ -138,16 +138,34 @@ code {
     padding: 10px 20px;
     border: none;
     border-radius: 5px;
-    margin-top: 20px; /* Add margin to separate it from the "Submit" button */
+    margin-top: 20px;
     margin-left: 20px;
     cursor: pointer;
-    background-color: #666; /* Choose an appropriate color */
+    background-color: #666;
     color: #FFFFFF;
 }
 
     /* Hover effect for the buttons */
     .registration-modal button[type="submit"]:hover,
     .registration-modal button[type="button"]:hover {
-        background-color: #444; /* Change the background color on hover */
+        background-color: #444;
     }
 
+/* Style for the Flight Details page */
+.flight-details {
+    text-align: center;
+    padding: 50px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    min-height: 100vh;
+}
+
+    .flight-details h1 {
+        font-size: 24px;
+        margin-bottom: 20px;
+    }
+
+    .flight-details p {
+        font-size: 18px;
+    }

@@ -1,7 +1,9 @@
 {
   "ExpandedNodes": [
-    ""
+    "",
+    "\\public",
+    "\\src"
   ],
-  "SelectedNode": "\\C:\\Users\\brandon.murphy\\Source\\Repos\\FlightPWA",
+  "SelectedNode": "\\src\\FlightDetails.tsx",
   "PreviewInSolutionExplorer": false
 }

@@ -1,21 +1,15 @@
 import React from 'react';
-import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
-import './App.css';
+import { Routes, Route } from 'react-router-dom';
 import LandingPage from './LandingPage';
+import FlightDetails from './FlightDetails';
 
-const App: React.FC = () => {
+function App() {
     return (
-        <Router>
-            <div className="App">
-                <header className="App-header">
-                    <Routes>
-                        <Route path="/" element={<LandingPage />} />
-                        {/* Add other routes here */}
-                    </Routes>
-                </header>
-            </div>
-        </Router>
+        <Routes>
+            <Route path="/" element={<LandingPage />} />
+            <Route path="/flight-details" element={<FlightDetails />} />
+        </Routes>
     );
-};
+}
 
 export default App;
