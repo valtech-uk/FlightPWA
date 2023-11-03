@@ -1,0 +1,22 @@
+{
+  "theme_color": "#f60",
+  "background_color": "#fff",
+  "display": "standalone",
+  "scope": "/",
+  "start_url": "/",
+  "name": "easyJet FlightPWA",
+  "short_name": "ej_Flight_PWA",
+  "description": "A PWA boilerplate with Next Js TypeScript",
+  "icons": [
+    {
+      "src": "/icon-512x512.png",
+      "sizes": "512x512",
+      "type": "image/png"
+    },
+    {
+      "src": "/icon-1024x1024.png",
+      "sizes": "1024x1024",
+      "type": "image/png"
+    }
+  ]
+}

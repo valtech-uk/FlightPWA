@@ -7,6 +7,7 @@ export default function Home() {
   return (
     <div className={styles.container}>
       <Head>
+        <link rel="manifest" href="/manifest.json" />
         <title>easyJet FligtPWA POC</title>
         <link rel="icon" href="/favicon.ico" />
       </Head>
