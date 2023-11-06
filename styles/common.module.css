@@ -1,8 +1,14 @@
 .container {
+  width: 100%;
   min-height: 100vh;
   padding: 0 0.5rem;
   display: flex;
   flex-direction: column;
-  justify-content: top;
+  justify-content: flex-start;
   align-items: center;
+  position: relative;
+}
+
+.main {
+  width: 100%;
 }

@@ -1,7 +1,11 @@
 import React, { FunctionComponent } from "react";
 import BackButton from "../components/general/backButton";
-import CheckinCountDown from "../components/itinerary/checkinCountdown";
-import BookingReference from "../components/itinerary/bookingReference";
+import CheckinCountDown from "../components/itinerary/CheckinCountdown";
+import BookingReference from "../components/itinerary/BookingReference";
+import BottomNavigation from "../components/general/bottomNavigation";
+import HeadComp from "../components/general/head";
+import globalStyles from "../styles/global";
+import styles from "../styles/common.module.css";
 
 type ItineraryProps = {
   someBool: boolean;
@@ -9,11 +13,18 @@ type ItineraryProps = {
 
 const Itinerary: FunctionComponent<ItineraryProps> = ({ someBool = true }) => {
   return (
-    <div>
+    <div className={styles.container}>
+      <HeadComp />
       <BackButton />
-      Itinerary <br />
-      <CheckinCountDown />
-      <BookingReference />
+      <main className={styles.main}>
+        Itinerary <br />
+        <CheckinCountDown />
+        <BookingReference />
+      </main>
+      <BottomNavigation current={'itinerary'} />
+      <style jsx global>
+        {globalStyles}
+      </style>
     </div>
   );
 };

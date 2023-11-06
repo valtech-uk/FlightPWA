@@ -1,5 +1,9 @@
 import React, { FunctionComponent } from "react";
 import BackButton from "../components/general/backButton";
+import BottomNavigation from "../components/general/bottomNavigation";
+import styles from "../styles/common.module.css";
+import globalStyles from "../styles/global";
+import HeadComp from "../components/general/head";
 
 type CheckinProps = {
   someBool: boolean;
@@ -9,9 +13,14 @@ const CheckinComplete: FunctionComponent<CheckinProps> = ({
   someBool = true,
 }) => {
   return (
-    <div>
+    <div className={styles.container}>
+      <HeadComp />
       <BackButton />
-      Checkin Complete
+      <main className={styles.main}>Checkin Complete</main>
+      <BottomNavigation current={"itinerary"} />
+      <style jsx global>
+        {globalStyles}
+      </style>
     </div>
   );
 };
