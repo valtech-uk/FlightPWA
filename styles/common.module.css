@@ -76,3 +76,11 @@
   width: 100%;
   text-align: center;
 }
+
+.divider {
+  display: block;
+  width: 100%;
+  padding-top: 1.7rem;
+  margin-bottom: 2rem;
+  border-bottom: solid 2px #e2e2e2;
+}

@@ -24,17 +24,7 @@ const FlightCard: FunctionComponent = () => {
           <strong>Alicante</strong>
           <div className={styles.flightdate}>Sat 18th Nov 12:35</div>
         </div>
-      </div>
-      <div className={styles.divider} />
-      <div className={styles.flightfootnote}>
-        <div className={styles.flightfootnoteheading}>
-          Still time to add extras
-        </div>
-        <div className={styles.flightfootnoteparagraph}>
-          Choose your preferred seat and pack more by adding bags or sports
-          equipment
-        </div>
-      </div>
+      </div>      
     </div>
   );
 };
