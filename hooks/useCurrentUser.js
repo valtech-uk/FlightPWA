@@ -6,6 +6,7 @@ export function useCurrentUser() {
         isLoading: true,
         isAuthorized: false,
         username: '',
+        flightNumber: null,
     });
 
     useEffect(() => {
@@ -14,11 +15,13 @@ export function useCurrentUser() {
             if( cancelRequest ) {
                 return;
             }
+            console.log(userInfo);
             if(userInfo === undefined){
                 setResult({
                     isLoading: false,
                     isAuthorized: false,
                     username: "",
+                    flightNumber: null,
                 });
                 return;
             }
@@ -26,6 +29,7 @@ export function useCurrentUser() {
                 isLoading: false,
                 isAuthorized: true,
                 username: userInfo.email ? userInfo.email : userInfo.phone,
+                flightNumber: userInfo.flight_number,
             });
         });
         return () => {

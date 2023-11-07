@@ -5,6 +5,7 @@ import styles from "../styles/common.module.css";
 import globalStyles from "../styles/global";
 import HeadComp from "../components/general/head";
 import Header from "../components/general/header";
+import PrivateRoute from "../components/general/privateRoute";
 
 type CheckinProps = {
   someBool: boolean;
@@ -12,6 +13,7 @@ type CheckinProps = {
 
 const Checkin: FunctionComponent<CheckinProps> = ({ someBool = true }) => {
   return (
+    <PrivateRoute>
     <div className={styles.container}>
       <HeadComp />
       <Header />
@@ -22,6 +24,7 @@ const Checkin: FunctionComponent<CheckinProps> = ({ someBool = true }) => {
         {globalStyles}
       </style>
     </div>
+    </PrivateRoute>
   );
 };
 
