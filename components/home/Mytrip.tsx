@@ -1,24 +1,18 @@
-import { Button } from "@mui/material";
 import React, { FunctionComponent } from "react";
-import buttonEjStyles from "../../styles/buttonEjStyles";
 import { ThemeProvider } from "@mui/material/styles";
 import theme from "../../theme";
 import Card from "../general/card";
-import ChevronRightIcon from "../../icons/ChevronRightIcon";
+import styles from "../../styles/common.module.css";
+import LinkButton from "../general/linkButton";
 
 const MyTrip: FunctionComponent = () => {
   return (
     <Card>
       <img src="/flight-card.svg" />
       <ThemeProvider theme={theme}>
-        <Button
-          href={"/itinerary"}
-          variant="contained"
-          sx={buttonEjStyles}
-          endIcon={<ChevronRightIcon />}
-        >
-          View itinerary
-        </Button>
+        <div className={styles.ctas}>
+          <LinkButton href="/itinerary">View itinerary</LinkButton>
+        </div>
       </ThemeProvider>
     </Card>
   );

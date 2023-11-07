@@ -1,4 +1,4 @@
-import React, { FunctionComponent, useState } from "react";
+import React, { FunctionComponent } from "react";
 import { useRouter } from "next/router";
 import Link from "next/link";
 import styles from "../../styles/navigation.module.css";
@@ -11,11 +11,10 @@ type BottomNavigationProps = {
 const BottomNavigation: FunctionComponent<BottomNavigationProps> = ({
   current,
 }) => {
-  const router = useRouter();
   return (
     <ul className={styles.bottomnavigation}>
-      <li className={current === "index" ? styles.current : ""}>
-        <Link href={"/"}>
+      <li className={current === "homepage" ? styles.current : ""}>
+        <Link href={"/homepage"}>
           <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
             <path d="M12,1.73l3.34,6.76l7.46,1.08l-5.4,5.26l1.27,7.43L12,18.76l-6.68,3.51l1.27-7.43L1.2,9.58l7.46-1.08L12,1.73z" />
           </svg>

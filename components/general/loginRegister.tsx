@@ -5,10 +5,8 @@ import Tab from "@mui/material/Tab";
 import tabsEjStyles from "../../styles/tabsEjStyles";
 import { ThemeProvider } from "@mui/material/styles";
 import theme from "../../theme";
-import { LoginContext } from "../../context/loginContext";
-import { Button } from "@mui/material";
-import buttonEjStyles from "../../styles/buttonEjStyles";
-import ChevronRightIcon from "../../icons/ChevronRightIcon";
+import { AppContext } from "../../context/appContext";
+import LinkButton from "./linkButton";
 
 interface TabPanelProps {
   children?: React.ReactNode;
@@ -56,15 +54,9 @@ const LoginRegister: FunctionComponent = () => {
               <label htmlFor="flightnumber">Flight number</label>
               <input id="flightnumber" type="text" placeholder="e.g. EZY2223" />
             </fieldset>
-
-            <Button
-              href={"/homepage"}
-              variant="contained"
-              sx={buttonEjStyles}
-              endIcon={<ChevronRightIcon />}
-            >
-              Sign in
-            </Button>
+            <div className={styles.ctas}>
+              <LinkButton href="/homepage">Sign in</LinkButton>
+            </div>
           </div>
         </CustomTabPanel>
         <CustomTabPanel value={value} index={1}>

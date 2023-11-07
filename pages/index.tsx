@@ -4,7 +4,7 @@ import LoginRegister from "../components/general/loginRegister";
 import HeadComp from "../components/general/head";
 import globalStyles from "../styles/global";
 import Link from "next/link";
-import { LoginContext } from "../context/loginContext";
+import { AppContext } from "../context/appContext";
 
 const Login: FunctionComponent = () => {
   return (
