@@ -1,12 +1,13 @@
 import React, { FunctionComponent } from "react";
+import styles from "../../styles/home.module.css";
 
-const HomePersonalisation: FunctionComponent = () => {
+const Personalisation: FunctionComponent = () => {
   return (
-    <div>
+    <div className={styles.personalisation}>
       <h1>Hello Brandon</h1>
       <h2>Where will you go next?</h2>
     </div>
   );
 };
 
-export default HomePersonalisation;
+export default Personalisation;

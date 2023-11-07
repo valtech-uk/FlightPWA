@@ -15,6 +15,14 @@ const theme = createTheme({
     //   contrastText: '#47008F',
     // },
   },
+  components: {
+    MuiTabs: {
+      styleOverrides: {
+        root: {}
+      },
+
+    }
+  }
 });
 
 export default theme;

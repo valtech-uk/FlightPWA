@@ -3,17 +3,25 @@ import React, { FunctionComponent } from "react";
 import buttonEjStyles from "../../styles/buttonEjStyles";
 import { ThemeProvider } from "@mui/material/styles";
 import theme from "../../theme";
+import Card from "../general/card";
+import ChevronRightIcon from "../../icons/ChevronRightIcon";
 
-const HomeMyTrip: FunctionComponent = () => {
+const MyTrip: FunctionComponent = () => {
   return (
-    <div>
+    <Card>
+      <img src="/flight-card.svg" />
       <ThemeProvider theme={theme}>
-        <Button href={"/itinerary"} variant="contained" sx={buttonEjStyles}>
+        <Button
+          href={"/itinerary"}
+          variant="contained"
+          sx={buttonEjStyles}
+          endIcon={<ChevronRightIcon />}
+        >
           View itinerary
         </Button>
       </ThemeProvider>
-    </div>
+    </Card>
   );
 };
 
-export default HomeMyTrip;
+export default MyTrip;

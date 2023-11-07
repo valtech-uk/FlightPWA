@@ -1,20 +1,21 @@
 import React, { FunctionComponent } from "react";
 import styles from "../styles/common.module.css";
-import Personalisation from "../components/home/Personalisation";
-import MyTrip from "../components/home/Mytrip";
-import BottomNavigation from "../components/general/bottomNavigation";
+import LoginRegister from "../components/general/loginRegister";
 import HeadComp from "../components/general/head";
 import globalStyles from "../styles/global";
+import Link from "next/link";
+import { LoginContext } from "../context/loginContext";
 
-const Home: FunctionComponent = () => {
+const Login: FunctionComponent = () => {
   return (
     <div className={styles.container}>
       <HeadComp />
-      <main className={styles.main}>
-        <Personalisation />
-        <MyTrip />
-      </main>
-      <BottomNavigation current={"index"} />
+      <header className={styles.headerlogin}>
+        <Link href={"/"}>
+          <img src="/easyJet-logo-diap.svg" />
+        </Link>
+      </header>
+      <LoginRegister />
       <style jsx global>
         {globalStyles}
       </style>
@@ -22,4 +23,4 @@ const Home: FunctionComponent = () => {
   );
 };
 
-export default Home;
+export default Login;

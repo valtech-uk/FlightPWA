@@ -1,12 +1,14 @@
 import React, { FunctionComponent } from "react";
 import { useRouter } from "next/router";
+import ChevronLeftIcon from "../../icons/ChevronLeftIcon";
+import styles from "../../styles/navigation.module.css";
 
 const BackButton: FunctionComponent = () => {
   const router = useRouter();
   return (
-    <button type="button" onClick={() => router.back()}>
-      Click here to go back
-    </button>
+    <a onClick={() => router.back()} className={styles.backbutton}>
+      <ChevronLeftIcon /> <span>Back</span>
+    </a>
   );
 };
 

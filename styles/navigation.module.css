@@ -10,19 +10,14 @@
   position: absolute;
   bottom: 0;
   z-index: 1;
+  height: 3.25rem;
+  background-color: #fff;
 }
 
 .bottomnavigation li {
   margin: 0;
   padding: 0;
 }
-
-/* .bottomnavigation li.current svg {
-  fill: #f60;
-  stroke: #f60;
-} */
-
-
 
 .bottomnavigation a {
   display: inline-flex;
@@ -51,6 +46,7 @@
   flex-direction: column;
   flex: 1 1 0%;
   color: #f60;
+  font-size: 0.75rem;
 }
 
 .bottomnavigation svg {
@@ -73,4 +69,19 @@
 
 .current svg {
   fill: #f60;
+}
+
+.logo img {
+  width: 92px;
+  height: 21px;
+}
+
+.backbutton {
+  display: flex;
+  padding: 1rem;
+  transform: translateX(-4px);
+}
+
+.backbutton span {
+  transform: translate(-2px, -1px);
 }
