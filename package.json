@@ -9,6 +9,8 @@
     "@emotion/react": "^11.11.1",
     "@emotion/styled": "^11.11.0",
     "@mui/material": "^5.14.16",
+    "@passageidentity/passage-auth": "^0.1.0-beta.28",
+    "@passageidentity/passage-elements": "^1.16.0",
     "next": "latest",
     "react": "18.2.0",
     "react-dom": "18.2.0",
