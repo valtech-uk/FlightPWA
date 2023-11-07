@@ -1,14 +1,20 @@
 import React, { FunctionComponent } from "react";
 import styles from "../styles/common.module.css";
-import Personalisation from "../components/home/Personalisation";
-import MyTrip from "../components/home/Mytrip";
+import homeStyles from "../styles/home.module.css";
 import BottomNavigation from "../components/general/bottomNavigation";
 import globalStyles from "../styles/global";
-import Header from "../components/general/header";
 import { motion } from "framer-motion";
 import { PageProps } from "../types";
 import { useRouter } from "next/router";
 import { variants1 } from "../transitionVariants";
+import Card from "../components/general/card";
+import FlightAddExtras from "../components/flight/FlightAddExtras";
+import FlightCard from "../components/flight/FlightCard";
+import FlightFootnote from "../components/flight/FlightFootnote";
+import LinkButton from "../components/general/linkButton";
+import UserIcon from "../icons/UserIcon";
+import FlightCountdownHome from "../components/flight/FlightCountdownHome";
+import FlightDates from "../components/flight/FlightDates";
 
 const Home: FunctionComponent<PageProps> = ({ history }) => {
   console.log("history", history, history[history.length - 2]);
@@ -21,10 +27,32 @@ const Home: FunctionComponent<PageProps> = ({ history }) => {
       exit="out"
     >
       <div className={styles.container}>
-        <Header />
+        <header className={styles.homeheader}>
+          <div className={styles.homeheaderuser}>
+            <UserIcon />
+          </div>
+        </header>
         <main className={styles.main}>
-          <Personalisation />
-          <MyTrip />
+          <div className={homeStyles.personalisation}>
+            <h1>Hello Brandon</h1>
+            <h2>Where will you go next?</h2>
+          </div>
+
+          <Card>
+            <FlightCountdownHome />
+            <div className={styles.cardimage}>
+              <img src="/alicante.png" />
+            </div>
+            <FlightCard />
+            <FlightDates />
+            <div className={styles.divider} />
+            <FlightAddExtras />
+            <div className={styles.divider} />
+            <FlightFootnote />
+            <div className={styles.ctas}>
+              <LinkButton href="/itinerary">View itinerary</LinkButton>
+            </div>
+          </Card>
         </main>
         <BottomNavigation current={"index"} />
         <style jsx global>

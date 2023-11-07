@@ -6,9 +6,44 @@
   position: relative;
 }
 
+.container2 {
+  width: 100%;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  background-color: #fff;
+}
+
 .main {
   width: 100%;
   padding: 1rem;
+}
+
+.homeheader {
+  width: 100%;
+  padding: 2rem 1rem 0;
+  display: flex;
+  justify-content: flex-end;
+}
+
+.homeheaderuser {
+  width: 2rem;
+  height: 2rem;
+  background-color: #fff;
+  border-radius: 50px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.homeheaderuser svg {
+  width: 0.875rem;
+  height: 0.875rem;
+}
+
+.homeheaderuser path {
+  fill: #000;
 }
 
 .header {
@@ -17,7 +52,6 @@
   display: flex;
   align-items: center;
   justify-content: space-between;
-  height: 5.25rem;
 }
 
 .headerlogin {
@@ -80,7 +114,19 @@
 .divider {
   display: block;
   width: 100%;
-  padding-top: 1.7rem;
-  margin-bottom: 2rem;
+  padding-top: 1.5rem;
+  margin-bottom: 1.5rem;
   border-bottom: solid 2px #e2e2e2;
+}
+
+.title {
+}
+
+.cardimage {
+  margin: 0 -1.25rem 1rem;
+  width: calc(100 + 2.5rem);
+}
+
+.cardimage img {
+  display: block;
 }

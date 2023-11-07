@@ -1,14 +1,13 @@
 import React, { FunctionComponent } from "react";
 import BackButton from "../components/general/backButton";
-import CheckinCountDown from "../components/itinerary/CheckinCountdown";
 import BookingReference from "../components/itinerary/BookingReference";
-import BottomNavigation from "../components/general/bottomNavigation";
 import globalStyles from "../styles/global";
 import styles from "../styles/common.module.css";
-import Header from "../components/general/header";
 import { motion } from "framer-motion";
 import { PageProps } from "../types";
 import { variants1 } from "../transitionVariants";
+import UserIcon from "../icons/UserIcon";
+import FlightCountdownItinerary from "../components/flight/FlightCountdownItinerary";
 
 const Itinerary: FunctionComponent<PageProps> = ({ history }) => {
   console.log("history", history, history[history.length - 2]);
@@ -20,15 +19,17 @@ const Itinerary: FunctionComponent<PageProps> = ({ history }) => {
       initial="out"
       exit="out"
     >
-      <div className={styles.container}>
-        <Header />
-        <BackButton />
+      <div className={styles.container2}>
+        <header className={styles.header}>
+          <BackButton />
+          <div className={styles.title}>My itinerary</div>
+          <UserIcon />
+        </header>
         <main className={styles.main}>
-          Itinerary <br />
-          <CheckinCountDown />
+          <FlightCountdownItinerary />
+          <div className={styles.divider} />
           <BookingReference />
         </main>
-        <BottomNavigation current={"itinerary"} />
         <style jsx global>
           {globalStyles}
         </style>

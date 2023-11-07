@@ -13,10 +13,10 @@ export default css.global`
     font-family: "tondo";
     font-weight: 400;
     background-color: lightgrey;
-    background-image: url("/bg3-780x1688.png");
+    background-image: url("/bg6.png");
     background-size: cover;
     background-repeat: no-repeat;
-    line-height: 1.3;
+    line-height: 1.5;
   }
   * {
     box-sizing: border-box;

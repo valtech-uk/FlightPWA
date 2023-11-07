@@ -45,7 +45,7 @@
   max-width: 168px;
   flex-direction: column;
   flex: 1 1 0%;
-  color: #f60;
+  color: #707070;
   font-size: 0.75rem;
 }
 
@@ -57,7 +57,7 @@
   width: 1em;
   height: 1em;
   display: inline-block;
-  stroke: currentColor;
+  stroke: #707070;
   fill: transparent;
   -webkit-flex-shrink: 0;
   -ms-flex-negative: 0;
@@ -68,7 +68,12 @@
 }
 
 .current svg {
+  stroke: #f60;
   fill: #f60;
+}
+
+.current a {
+  color: #f60;
 }
 
 .logo img {
@@ -78,10 +83,9 @@
 
 .backbutton {
   display: flex;
-  padding: 1rem;
-  transform: translateX(-4px);
+  align-items: center;
 }
 
-.backbutton span {
-  transform: translate(-2px, -1px);
+.backbutton svg {
+  transform: translateY(3px);
 }
