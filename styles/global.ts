@@ -16,6 +16,7 @@ export default css.global`
     background-image: url("/bg3-780x1688.png");
     background-size: cover;
     background-repeat: no-repeat;
+    line-height: 1.3;
   }
   * {
     box-sizing: border-box;
@@ -26,6 +27,8 @@ export default css.global`
   h4,
   h5 {
     font-weight: normal;
+    padding: 0;
+    margin: 0; 
   }
   button,
   input {

@@ -4,11 +4,12 @@ import theme from "../../theme";
 import Card from "../general/card";
 import styles from "../../styles/common.module.css";
 import LinkButton from "../general/linkButton";
+import FlightCard from "../flight/FlightCard";
 
 const MyTrip: FunctionComponent = () => {
   return (
     <Card>
-      <img src="/flight-card.svg" />
+      <FlightCard />
       <ThemeProvider theme={theme}>
         <div className={styles.ctas}>
           <LinkButton href="/itinerary">View itinerary</LinkButton>

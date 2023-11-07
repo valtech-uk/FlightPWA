@@ -3,25 +3,25 @@ import BackButton from "../components/general/backButton";
 import BottomNavigation from "../components/general/bottomNavigation";
 import styles from "../styles/common.module.css";
 import globalStyles from "../styles/global";
-import HeadComp from "../components/general/head";
 import Header from "../components/general/header";
+import { useRouter } from "next/router";
+import { motion } from "framer-motion";
+import { PageProps } from "../types";
 
-type CheckinProps = {
-  someBool: boolean;
-};
-
-const Checkin: FunctionComponent<CheckinProps> = ({ someBool = true }) => {
+const Checkin: FunctionComponent<PageProps> = ({ history }) => {
+  console.log("history", history, history[history.length - 2]);
   return (
-    <div className={styles.container}>
-      <HeadComp />
-      <Header />
-      <BackButton />
-      <main className={styles.main}>Checkin</main>
-      <BottomNavigation current={"itinerary"} />
-      <style jsx global>
-        {globalStyles}
-      </style>
-    </div>
+    <motion.div key="checkin">
+      <div className={styles.container}>
+        <Header />
+        <BackButton />
+        <main className={styles.main}>Checkin</main>
+        <BottomNavigation current={"itinerary"} />
+        <style jsx global>
+          {globalStyles}
+        </style>
+      </div>
+    </motion.div>
   );
 };
 

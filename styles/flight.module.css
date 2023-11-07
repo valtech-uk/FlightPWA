@@ -1,0 +1,68 @@
+
+.divider {
+  display: block;
+  width: 100%;
+  padding-top: 1.7rem;
+  margin-bottom: 2rem;
+  border-bottom: solid 2px #e2e2e2;
+}
+
+.flightcard {
+  width: 100%;
+}
+
+.flightrow1 {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 0.5rem;
+}
+
+.flightnum {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.875rem;
+}
+
+.flightnum div {
+  margin-top: 0.2rem;
+  color: #707070;
+}
+
+.flightnum svg {
+  transform: rotate(45deg);
+}
+
+.flightcode {
+  text-transform: uppercase;
+  font-size: 2rem;
+}
+
+.flightdepart {
+  font-size: 0.875rem;
+}
+
+.flightarrive {
+  font-size: 0.875rem;
+  text-align: right;
+}
+
+.flightdate {
+  color: #707070;
+}
+
+.flightfootnote {
+  text-align: center;
+}
+
+.flightfootnoteheading {
+  font-size: 1.125rem;
+  margin-bottom: 0.1rem;
+}
+
+.flightfootnoteparagraph {
+  font-size: 0.875rem;
+}

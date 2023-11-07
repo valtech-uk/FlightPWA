@@ -3,19 +3,13 @@ import BackButton from "../components/general/backButton";
 import BottomNavigation from "../components/general/bottomNavigation";
 import styles from "../styles/common.module.css";
 import globalStyles from "../styles/global";
-import HeadComp from "../components/general/head";
 import Header from "../components/general/header";
+import { PageProps } from "../types";
 
-type CheckinProps = {
-  someBool: boolean;
-};
-
-const CheckinComplete: FunctionComponent<CheckinProps> = ({
-  someBool = true,
-}) => {
+const CheckinComplete: FunctionComponent<PageProps> = ({ history }) => {
+  console.log("history", history, history[history.length - 2]);
   return (
     <div className={styles.container}>
-      <HeadComp />
       <Header />
       <BackButton />
       <main className={styles.main}>Checkin Complete</main>
