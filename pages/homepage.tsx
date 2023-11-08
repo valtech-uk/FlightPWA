@@ -54,11 +54,12 @@ const Home: FunctionComponent<PageProps> = ({ history }) => {
             </div>
           </Card>
         </main>
-        <BottomNavigation current={"index"} />
+        
         <style jsx global>
           {globalStyles}
         </style>
       </div>
+      <BottomNavigation current={"index"} />
     </motion.div>
   );
 };

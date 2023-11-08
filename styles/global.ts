@@ -13,7 +13,7 @@ export default css.global`
     font-family: "tondo";
     font-weight: 400;
     background-color: lightgrey;
-    background-image: url("/bg6.png");
+    background-image: url("/bg.png");
     background-size: cover;
     background-repeat: no-repeat;
     line-height: 1.5;
@@ -35,5 +35,8 @@ export default css.global`
     font-family: "tondo";
     font-weight: 400;
     font-size: 1rem;
+  }
+  img {
+    max-width: 100%;
   }
 `;

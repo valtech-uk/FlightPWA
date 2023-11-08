@@ -4,8 +4,8 @@
   "display": "standalone",
   "scope": "/",
   "start_url": "/",
-  "name": "easyJet FlightPWA",
-  "short_name": "ej_Flight_PWA",
+  "name": "easyJet",
+  "short_name": "easyJet",
   "description": "A PWA boilerplate with Next Js TypeScript",
   "prefer_related_applications": false,
   "icons": [

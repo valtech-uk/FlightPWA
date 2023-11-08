@@ -9,7 +9,6 @@ import { PageProps } from "../types";
 import { variants1 } from "../transitionVariants";
 
 const Login: FunctionComponent<PageProps> = ({ history }) => {
-  console.log("history", history, history[history.length - 2]);
   return (
     <motion.div
       key="index"
@@ -18,10 +17,10 @@ const Login: FunctionComponent<PageProps> = ({ history }) => {
       initial="out"
       exit="out"
     >
-      <div className={styles.container}>
+      <div className={styles.container2}>
         <header className={styles.headerlogin}>
           <Link href={"/"}>
-            <img src="/easyJet-logo-diap.svg" />
+            <img src="/easyJet-logo.svg" />
           </Link>
         </header>
         <LoginRegister />

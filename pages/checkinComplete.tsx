@@ -13,7 +13,6 @@ const CheckinComplete: FunctionComponent<PageProps> = ({ history }) => {
       <Header />
       <BackButton />
       <main className={styles.main}>Checkin Complete</main>
-      <BottomNavigation current={"itinerary"} />
       <style jsx global>
         {globalStyles}
       </style>
