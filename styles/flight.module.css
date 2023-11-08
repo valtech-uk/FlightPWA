@@ -63,6 +63,10 @@
 
 .flightheading {
   font-weight: 700;
+}
+
+.flightcountdownitinerary {
+  font-weight: 700;
   text-align: center;
 }
 
@@ -88,4 +92,10 @@
 
 .bookingreferencenumber {
   font-size: 1.125rem;
+}
+
+.bookingreferencenote {
+  font-size: 0.875rem;
+  color: #707070;
+  padding: 1rem 0;
 }

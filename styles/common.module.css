@@ -23,6 +23,17 @@
   padding: 1rem;
 }
 
+.greyback {
+  position: absolute;
+  z-index: -1;
+  top: 14rem;
+  left: 0;
+  background-color: #dfecec;
+  height: calc(100vh - 14rem + 5.25rem);
+  display: block;
+  width: 100%;
+}
+
 .homeheader {
   width: 100%;
   padding: 2rem 1rem 0;
@@ -59,11 +70,11 @@
 
 .headerlogin {
   width: 100%;
-  padding: 1rem;
+  padding: 3.563rem 0 2rem;
   display: flex;
   align-items: center;
   justify-content: center;
-  height: 5.25rem;
+  height: 8.063rem;
 }
 
 .headerlogin a {
@@ -72,18 +83,22 @@
 
 .headerlogin img {
   display: block;
-  width: 113px;
-  height: 25px;
+  width: 178px;
+  height: 40px;
 }
 
 .loginregister {
   width: 100%;
-  min-height: calc(100vh - 5.25rem);
+  min-height: 100vh;
   display: flex;
   flex-direction: column;
   position: relative;
-  background-color: #dfecec;
   padding: 1rem;
+  padding-top: 0;
+}
+
+.loginregisterwrapper {
+  padding-top: 0.625rem;
 }
 
 .loginform {
@@ -119,12 +134,36 @@
   text-align: center;
 }
 
+.secctas {
+  padding-bottom: 1rem;
+  margin-top: -1rem;
+}
+
+.secctas a {
+  font-size: 0.875rem;
+  color: #707070;
+  position: relative;
+  display: inline-block;
+  text-decoration: none;
+}
+
+.secctas a::after {
+  content: "";
+  display: block;
+  position: absolute;
+  bottom: -2px;
+  width: 100%;
+  left: 0;
+  height: 1.5px;
+  background-color: #707070;
+}
+
 .divider {
   display: block;
   width: 100%;
-  padding-top: 1.5rem;
-  margin-bottom: 1.5rem;
-  border-bottom: solid 2px #e2e2e2;
+  padding-top: 1rem;
+  margin-bottom: 1rem;
+  border-bottom: solid 1px #e2e2e2;
 }
 
 .title {
@@ -132,9 +171,70 @@
 
 .cardimage {
   margin: 0 -1.25rem 1rem;
-  width: calc(100 + 2.5rem);
+  width: calc(100% + 2.5rem);
 }
 
 .cardimage img {
   display: block;
+}
+
+.itinerary {
+  border-radius: 2rem 2rem 0 0;
+  background-color: #dfecec;
+  overflow: hidden;
+}
+
+.itineraryimage {
+  margin: -1.25rem 0 0;
+  width: calc(100% + 2.5rem);
+}
+
+.itineraryimage img {
+  display: block;
+}
+
+.itinerarycard {
+  position: relative;
+  padding: 0 1.25rem;
+  margin: -2.5rem 0 0;
+}
+
+.itinerarycardsub {
+  padding: 1.25rem;
+}
+
+.itinerarycardsub + .itinerarycardsub {
+  padding-top: 0;
+}
+
+.itinerarysiri {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.itineraryaddsiri {
+  display: flex;
+  align-items: center;
+  border: solid 1px #707070;
+  border-radius: 2rem;
+  padding: 0.2rem 0.5rem;
+  font-weight: 700;
+  text-decoration: none;
+  color: #000;
+  flex: 0 0 50%;
+}
+
+.itineraryaddsiri img {
+  width: 2rem;
+  height: 2rem;
+  display: inline-block;
+  margin-right: 0.5rem;
+}
+
+.itinerarysiritext {
+  font-size: 0.875rem;
+  color: #707070;
+  flex: 0 0 50%;
+  margin-right: 0.5rem;
 }

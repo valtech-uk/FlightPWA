@@ -3,7 +3,7 @@ import styles from "../../styles/flight.module.css";
 
 const FlightCountdownItinerary: FunctionComponent = () => {
   return (
-    <div className={styles.flightheading}>
+    <div className={styles.flightcountdownitinerary}>
       Your trip to Alicante in 5 days
     </div>
   );

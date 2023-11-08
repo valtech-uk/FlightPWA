@@ -8,6 +8,7 @@ import { motion } from "framer-motion";
 import { PageProps } from "../types";
 import { variants1 } from "../transitionVariants";
 import Head from "next/head";
+import Card from "../components/general/card";
 
 const Login: FunctionComponent<PageProps> = ({ history }) => {
   return (
@@ -19,12 +20,12 @@ const Login: FunctionComponent<PageProps> = ({ history }) => {
       exit="out"
     >
       <Head>
-        <meta name="theme-color" content="#dfecec" />
+        <meta name="theme-color" content="#ff6600" />
       </Head>
-      <div className={styles.container2}>
+      <div className={styles.container}>
         <header className={styles.headerlogin}>
           <Link href={"/"}>
-            <img src="/easyJet-logo.svg" />
+            <img src="/easyJet-logo-diap.svg" />
           </Link>
         </header>
         <LoginRegister />

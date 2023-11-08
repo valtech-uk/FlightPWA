@@ -35,6 +35,7 @@ const Home: FunctionComponent<PageProps> = ({ history }) => {
             <UserIcon />
           </div>
         </header>
+        <div className={styles.greyback} />
         <main className={styles.main}>
           <div className={homeStyles.personalisation}>
             <h1>Hello Brandon</h1>
@@ -50,14 +51,14 @@ const Home: FunctionComponent<PageProps> = ({ history }) => {
             <FlightDates />
             <div className={styles.divider} />
             <FlightAddExtras />
-            <div className={styles.divider} />
-            <FlightFootnote />
+            {/* <div className={styles.divider} />
+            <FlightFootnote /> */}
             <div className={styles.ctas}>
               <LinkButton href="/itinerary">View itinerary</LinkButton>
             </div>
           </Card>
         </main>
-        
+
         <style jsx global>
           {globalStyles}
         </style>

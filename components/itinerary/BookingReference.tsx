@@ -10,6 +10,7 @@ const BookingReference: FunctionComponent = () => {
         <div className={styles.bookingreference}>Booking reference</div>
         <div className={styles.bookingreferencenumber}>K3DWQ15</div>
       </div>
+      <div className={styles.bookingreferencenote}>Check-in for your flight and get your boarding passes.</div>
       <div className={styless.ctas}>
         <LinkButton href="/checkin">Check in</LinkButton>
       </div>
