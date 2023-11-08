@@ -15,34 +15,9 @@ import LinkButton from "../components/general/linkButton";
 import UserIcon from "../icons/UserIcon";
 import FlightCountdownHome from "../components/flight/FlightCountdownHome";
 import FlightDates from "../components/flight/FlightDates";
-import { createClient } from "contentful";
+import Head from "next/head";
 
-export async function getStaticProps() {
-  const client = createClient({
-    space: process.env.CONTENTFUL_SPACE_ID,
-    accessToken: process.env.CONTENTFUL_ACCESS_KEY,
-  });
-
-  const res = await client.getEntries({ content_type: "title" });
-
-  return {
-    props: {
-      data: res.items,
-    },
-  };
-}
-
-const Home: FunctionComponent<PageProps> = ({ history, data }) => {
-  console.log("history", history, history[history.length - 2]);
-  const {
-    flightNumber,
-    departureAirportCode,
-    departureAirportName,
-    departureDateTime,
-    arrivalAirportCode,
-    arrivalAirportName,
-    arrivalDateTime,
-  } = data[0].fields;
+const Home: FunctionComponent<PageProps> = ({ history }) => {
   return (
     <motion.div
       key="/homepage"
@@ -51,6 +26,9 @@ const Home: FunctionComponent<PageProps> = ({ history, data }) => {
       initial="out"
       exit="out"
     >
+      <Head>
+        <meta name="theme-color" content="#ff6600" />
+      </Head>
       <div className={styles.container}>
         <header className={styles.homeheader}>
           <div className={styles.homeheaderuser}>
