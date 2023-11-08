@@ -1,14 +1,27 @@
-import React, { FunctionComponent } from "react";
+import moment from "moment";
+import { FC } from "react";
 import styles from "../../styles/flight.module.css";
 
-const FlightDates: FunctionComponent = () => {
+type FlightDatesProps = {
+  departureDateTime: Date;
+  arrivalDateTime: Date;
+};
+
+const FlightDates: FC<FlightDatesProps> = ({
+  departureDateTime,
+  arrivalDateTime,
+}) => {
   return (
     <div className={styles.flightrow1}>
       <div className={styles.flightdepart}>
-        <div className={styles.flightdate}>Fri 17th Nov 06:05</div>
+        <div className={styles.flightdate}>
+          {moment(departureDateTime).format("ddd Do MMM HH:mm")}
+        </div>
       </div>
       <div className={styles.flightarrive}>
-        <div className={styles.flightdate}>Sat 18th Nov 12:35</div>
+        <div className={styles.flightdate}>
+          {moment(arrivalDateTime).format("ddd Do MMM HH:mm")}
+        </div>
       </div>
     </div>
   );

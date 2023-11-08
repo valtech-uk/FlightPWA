@@ -15,9 +15,34 @@ import LinkButton from "../components/general/linkButton";
 import UserIcon from "../icons/UserIcon";
 import FlightCountdownHome from "../components/flight/FlightCountdownHome";
 import FlightDates from "../components/flight/FlightDates";
+import { createClient } from "contentful";
 
-const Home: FunctionComponent<PageProps> = ({ history }) => {
+export async function getStaticProps() {
+  const client = createClient({
+    space: process.env.CONTENTFUL_SPACE_ID,
+    accessToken: process.env.CONTENTFUL_ACCESS_KEY,
+  });
+
+  const res = await client.getEntries({ content_type: "title" });
+
+  return {
+    props: {
+      data: res.items,
+    },
+  };
+}
+
+const Home: FunctionComponent<PageProps> = ({ history, data }) => {
   console.log("history", history, history[history.length - 2]);
+  const {
+    flightNumber,
+    departureAirportCode,
+    departureAirportName,
+    departureDateTime,
+    arrivalAirportCode,
+    arrivalAirportName,
+    arrivalDateTime,
+  } = data[0].fields;
   return (
     <motion.div
       key="/homepage"
@@ -43,8 +68,19 @@ const Home: FunctionComponent<PageProps> = ({ history }) => {
             <div className={styles.cardimage}>
               <img src="/alicante.png" />
             </div>
-            <FlightCard />
-            <FlightDates />
+            <FlightCard
+              arrivalDateTime={arrivalDateTime}
+              departureDateTime={departureDateTime}
+              flightNumber={flightNumber}
+              departureAirportCode={departureAirportCode}
+              departureAirportName={departureAirportName}
+              arrivalAirportCode={arrivalAirportCode}
+              arrivalAirportName={arrivalAirportName}
+            />
+            <FlightDates
+              arrivalDateTime={arrivalDateTime}
+              departureDateTime={departureDateTime}
+            />
             <div className={styles.divider} />
             <FlightAddExtras />
             <div className={styles.divider} />
@@ -54,7 +90,7 @@ const Home: FunctionComponent<PageProps> = ({ history }) => {
             </div>
           </Card>
         </main>
-        
+
         <style jsx global>
           {globalStyles}
         </style>
