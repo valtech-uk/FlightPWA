@@ -16,6 +16,7 @@ import UserIcon from "../icons/UserIcon";
 import FlightCountdownHome from "../components/flight/FlightCountdownHome";
 import FlightDates from "../components/flight/FlightDates";
 import { createClient } from "contentful";
+import Head from "next/head";
 
 export async function getStaticProps() {
   const client = createClient({
