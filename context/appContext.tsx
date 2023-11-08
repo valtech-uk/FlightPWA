@@ -8,14 +8,14 @@ type AppContextProviderProps = {
 
 type User = {
     id: number
-    name: string
+    username: string
     email: string
-    flightNumber: number
 }
 
 type Context = {
     user: User | null
     isAuthorized: boolean
+    isLoading: boolean,
 }
 
 type AppContext = {
@@ -23,17 +23,16 @@ type AppContext = {
     setContext: React.Dispatch<React.SetStateAction<Context>>
 }
 
-// const initialContext = {
-//     user: null,
-//     isAuthorized: false
-// }
+const initialContextValues = {
+    user: null,
+    isAuthorized: false,
+    isLoading: false
+}
 
 export const AppContext = createContext<AppContext | null>(null);
 
-// JSX.Element | React.ReactNode
-
 export default function AppContextProvider ({children}: AppContextProviderProps) {
-    const [context, setContext] = useState<Context>()
+    const [context, setContext] = useState<Context>(initialContextValues)
 
     return(
         <AppContext.Provider value={{

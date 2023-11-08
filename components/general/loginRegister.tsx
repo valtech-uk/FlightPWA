@@ -1,12 +1,11 @@
 import React, { FunctionComponent, SyntheticEvent, useState } from "react";
-import styles from "../../styles/common.module.css";
 import Tabs from "@mui/material/Tabs";
 import Tab from "@mui/material/Tab";
-import tabsEjStyles from "../../styles/tabsEjStyles";
 import { ThemeProvider } from "@mui/material/styles";
 import theme from "../../theme";
-import { AppContext } from "../../context/appContext";
 import LinkButton from "./linkButton";
+import tabsEjStyles from "../../styles/tabsEjStyles";
+import styles from "../../styles/common.module.css";
 
 interface TabPanelProps {
   children?: React.ReactNode;

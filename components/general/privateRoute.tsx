@@ -1,25 +1,38 @@
 "use client"
 
-import {FC, FunctionComponent} from "react";
+import {FunctionComponent, ReactNode, useEffect, useState} from "react";
 import { useCurrentUser } from "../../hooks/useCurrentUser";
-import { useAppContext } from "../../context/appContext";
+import { useRouter } from 'next/router';
 
-type PrivateRouteProps = {
-    children: JSX.Element | React.ReactNode
+interface PrivateRouteProps {
+    children: ReactNode | JSX.Element;
 }
 
-const PrivateRoute: FC = ({ children }) => {
-    // const {isLoading, isAuthorized, username} = useCurrentUser();
-    const { context } = useAppContext();
+const PrivateRoute: FunctionComponent<PrivateRouteProps> = ({ children }) => {
+    const router = useRouter();
+    const {isAuthorized, isLoading} = useCurrentUser();
+    const [countdown, setCountdown] = useState(5);
 
-    console.log("isAuthorized:", context?.isAuthorized, context);
+    useEffect(() => {
+        const redirectTimeout = setTimeout(() => {
+            router.push('/registerLogin');
+        }, countdown * 1000);
 
-    if (context?.isAuthorized) {
-        return children;
-    } else {
-        // Redirect to the login page or show a message to the user
-        return <p>You need to be logged in to access this page.</p>;
-    }
+        const countdownInterval = setInterval(() => {
+            if (countdown > 0) {
+                setCountdown(countdown - 1);
+            }
+        }, 1000);
+
+        return () => {
+            clearTimeout(redirectTimeout);
+            clearInterval(countdownInterval);
+        }
+    }, [isAuthorized, isLoading, countdown]);
+
+    if(isLoading)return <p>Loading, please wait</p>
+    if(!isLoading && !isAuthorized)return <p>You need to be logged in to access this page. Redirect to login page in {countdown} sec</p>
+    if(isAuthorized)return <>{children}</>
 };
 
 export default PrivateRoute;

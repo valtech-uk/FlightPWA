@@ -1,14 +1,17 @@
+"use client"
+
 import { useState, useEffect } from "react";
 import { PassageUser } from '@passageidentity/passage-auth/passage-user';
-import {useAppContext} from "../context/appContext";
+import { useAppContext } from "../context/appContext";
 
 export function useCurrentUser() {
     const {setContext} = useAppContext();
     const [result, setResult] = useState({
+        id: "",
         isLoading: true,
         isAuthorized: false,
+        email: "",
         username: '',
-        flightNumber: null,
     });
 
     useEffect(() => {
@@ -17,34 +20,40 @@ export function useCurrentUser() {
             if( cancelRequest ) {
                 return;
             }
-            console.log(userInfo);
             if(userInfo === undefined){
                 setResult({
+                    id: "",
                     isLoading: false,
                     isAuthorized: false,
+                    email: "",
                     username: "",
-                    flightNumber: null,
                 });
                 setContext({
-                    user: null,
-                    isAuthorized: false
+                    user: {
+                        id: "",
+                        email: "",
+                        username: "",
+                    },
+                    isAuthorized: false,
+                    isLoading: false
                 })
                 return;
             }
             setResult({
+                id: userInfo.id,
                 isLoading: false,
                 isAuthorized: true,
-                username: userInfo.email ? userInfo.email : userInfo.phone,
-                flightNumber: userInfo.user_metadata.flight_number,
+                email: userInfo.email,
+                username: userInfo.user_metadata.name,
             });
             setContext({
                 user: {
                     id: userInfo.id,
                     email: userInfo.email,
-                    name: userInfo.email,
-                    flightNumber: userInfo.user_metadata.flight_number
+                    username: userInfo.user_metadata.name,
                 },
-                isAuthorized: true
+                isAuthorized: true,
+                isLoading: false,
             })
         });
         return () => {
