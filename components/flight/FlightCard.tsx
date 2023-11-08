@@ -5,6 +5,7 @@ import FlightIcon from "../../icons/FlightIcon";
 const FlightCard: FunctionComponent = () => {
   return (
     <>
+      test
       <div className={styles.flightrow1}>
         <div className={styles.flightcode}>LTN</div>
         <div className={styles.flightnum}>
