@@ -41,7 +41,7 @@ const Itinerary: FunctionComponent<PageProps> = ({ history, data }) => {
     arrivalAirportCode,
     arrivalAirportName,
     arrivalDateTime,
-  } = data[0].fields;
+  } = data[0]?.fields || {};
   return (
     <motion.div
       key="itinerary"
