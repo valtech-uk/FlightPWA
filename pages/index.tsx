@@ -8,7 +8,6 @@ import { motion } from "framer-motion";
 import { PageProps } from "../types";
 import { variants1 } from "../transitionVariants";
 import Head from "next/head";
-import Card from "../components/general/card";
 
 const Login: FunctionComponent<PageProps> = ({ history }) => {
   return (

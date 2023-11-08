@@ -15,8 +15,33 @@ import FlightAddExtras from "../components/flight/FlightAddExtras";
 import FlightCard from "../components/flight/FlightCard";
 import FlightDates from "../components/flight/FlightDates";
 import LinkButton from "../components/general/linkButton";
+import { createClient } from "contentful";
 
-const Itinerary: FunctionComponent<PageProps> = ({ history }) => {
+export async function getStaticProps() {
+  const client = createClient({
+    space: process.env.CONTENTFUL_SPACE_ID,
+    accessToken: process.env.CONTENTFUL_ACCESS_KEY,
+  });
+
+  const res = await client.getEntries({ content_type: "title" });
+
+  return {
+    props: {
+      data: res.items,
+    },
+  };
+}
+
+const Itinerary: FunctionComponent<PageProps> = ({ history, data }) => {
+  const {
+    flightNumber,
+    departureAirportCode,
+    departureAirportName,
+    departureDateTime,
+    arrivalAirportCode,
+    arrivalAirportName,
+    arrivalDateTime,
+  } = data[0].fields;
   return (
     <motion.div
       key="itinerary"
@@ -48,7 +73,9 @@ const Itinerary: FunctionComponent<PageProps> = ({ history }) => {
           <div className={styles.itinerarycardsub}>
             <Card>
               <div className={styles.itinerarysiri}>
-                <div className={styles.itinerarysiritext}>Add a shortcut to get flight updates via Siri</div>
+                <div className={styles.itinerarysiritext}>
+                  Add a shortcut to get flight updates via Siri
+                </div>
                 <a href="#" className={styles.itineraryaddsiri}>
                   <img src="/siri.png" />
                   <span>Add to Siri</span>
@@ -59,8 +86,19 @@ const Itinerary: FunctionComponent<PageProps> = ({ history }) => {
           <div className={styles.itinerarycardsub}>
             <Card>
               <FlightHeading />
-              <FlightCard />
-              <FlightDates />
+              <FlightCard
+                arrivalDateTime={arrivalDateTime}
+                departureDateTime={departureDateTime}
+                flightNumber={flightNumber}
+                departureAirportCode={departureAirportCode}
+                departureAirportName={departureAirportName}
+                arrivalAirportCode={arrivalAirportCode}
+                arrivalAirportName={arrivalAirportName}
+              />
+              <FlightDates
+                arrivalDateTime={arrivalDateTime}
+                departureDateTime={departureDateTime}
+              />
               <div className={styles.divider} />
               <FlightAddExtras />
               <div className={styles.ctas}>
