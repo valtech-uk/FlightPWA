@@ -46,8 +46,19 @@ const Home: FunctionComponent<PageProps> = ({ history }) => {
             <div className={styles.cardimage}>
               <img src="/alicante.png" />
             </div>
-            <FlightCard />
-            <FlightDates />
+            <FlightCard
+              arrivalDateTime={arrivalDateTime}
+              departureDateTime={departureDateTime}
+              flightNumber={flightNumber}
+              departureAirportCode={departureAirportCode}
+              departureAirportName={departureAirportName}
+              arrivalAirportCode={arrivalAirportCode}
+              arrivalAirportName={arrivalAirportName}
+            />
+            <FlightDates
+              arrivalDateTime={arrivalDateTime}
+              departureDateTime={departureDateTime}
+            />
             <div className={styles.divider} />
             <FlightAddExtras />
             <div className={styles.divider} />
@@ -57,7 +68,7 @@ const Home: FunctionComponent<PageProps> = ({ history }) => {
             </div>
           </Card>
         </main>
-        
+
         <style jsx global>
           {globalStyles}
         </style>
