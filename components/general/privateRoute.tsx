@@ -1,11 +1,20 @@
-import { FunctionComponent } from "react";
+"use client"
+
+import {FC, FunctionComponent} from "react";
 import { useCurrentUser } from "../../hooks/useCurrentUser";
+import { useAppContext } from "../../context/appContext";
 
-const PrivateRoute: FunctionComponent = ({ children }) => {
-    const {isLoading, isAuthorized, username} = useCurrentUser();
-    console.log("isAuthorized:", isAuthorized, username);
+type PrivateRouteProps = {
+    children: JSX.Element | React.ReactNode
+}
 
-    if (isAuthorized) {
+const PrivateRoute: FC = ({ children }) => {
+    // const {isLoading, isAuthorized, username} = useCurrentUser();
+    const { context } = useAppContext();
+
+    console.log("isAuthorized:", context?.isAuthorized, context);
+
+    if (context?.isAuthorized) {
         return children;
     } else {
         // Redirect to the login page or show a message to the user
