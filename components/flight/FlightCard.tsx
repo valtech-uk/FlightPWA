@@ -20,16 +20,17 @@ const FlightCard: FC<FlightCardProps> = ({
   arrivalDateTime,
   arrivalAirportName,
   departureAirportName,
+  arrivalAirportCode,
 }) => {
   return (
     <>
       <div className={styles.flightrow1}>
-        <div className={styles.flightcode}>LTN</div>
+        <div className={styles.flightcode}>{departureAirportCode}</div>
         <div className={styles.flightnum}>
           <FlightIcon />
           <div>{flightNumber}</div>
         </div>
-        <div className={styles.flightcode}>{departureAirportCode}</div>
+        <div className={styles.flightcode}>{arrivalAirportCode}</div>
       </div>
       <div className={styles.flightrow1}>
         <div className={styles.flightdepart}>
