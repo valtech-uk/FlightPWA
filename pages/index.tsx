@@ -7,6 +7,7 @@ import { AppContext } from "../context/appContext";
 import { motion } from "framer-motion";
 import { PageProps } from "../types";
 import { variants1 } from "../transitionVariants";
+import Head from "next/head";
 
 const Login: FunctionComponent<PageProps> = ({ history }) => {
   return (
@@ -17,6 +18,9 @@ const Login: FunctionComponent<PageProps> = ({ history }) => {
       initial="out"
       exit="out"
     >
+      <Head>
+        <meta name="theme-color" content="#dfecec" />
+      </Head>
       <div className={styles.container2}>
         <header className={styles.headerlogin}>
           <Link href={"/"}>

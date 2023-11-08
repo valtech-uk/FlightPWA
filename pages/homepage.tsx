@@ -15,9 +15,9 @@ import LinkButton from "../components/general/linkButton";
 import UserIcon from "../icons/UserIcon";
 import FlightCountdownHome from "../components/flight/FlightCountdownHome";
 import FlightDates from "../components/flight/FlightDates";
+import Head from "next/head";
 
 const Home: FunctionComponent<PageProps> = ({ history }) => {
-  console.log("history", history, history[history.length - 2]);
   return (
     <motion.div
       key="/homepage"
@@ -26,6 +26,9 @@ const Home: FunctionComponent<PageProps> = ({ history }) => {
       initial="out"
       exit="out"
     >
+      <Head>
+        <meta name="theme-color" content="#ff6600" />
+      </Head>
       <div className={styles.container}>
         <header className={styles.homeheader}>
           <div className={styles.homeheaderuser}>

@@ -8,9 +8,9 @@ import { PageProps } from "../types";
 import { variants1 } from "../transitionVariants";
 import UserIcon from "../icons/UserIcon";
 import FlightCountdownItinerary from "../components/flight/FlightCountdownItinerary";
+import Head from "next/head";
 
 const Itinerary: FunctionComponent<PageProps> = ({ history }) => {
-  console.log("history", history, history[history.length - 2]);
   return (
     <motion.div
       key="itinerary"
@@ -19,6 +19,9 @@ const Itinerary: FunctionComponent<PageProps> = ({ history }) => {
       initial="out"
       exit="out"
     >
+      <Head>
+        <meta name="theme-color" content="#ffffff" />
+      </Head>
       <div className={styles.container2}>
         <header className={styles.header}>
           <BackButton />
