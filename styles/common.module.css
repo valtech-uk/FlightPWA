@@ -4,13 +4,10 @@
   flex-direction: column;
   position: relative;
   min-height: 100vh;
-  margin: 0 auto;
-  max-width: 480px;
 }
 
 .containerwithnav {
-  padding-bottom: 6.563rem;
-  /* min-height: calc(100vh - 5.25rem); */
+  padding-bottom: 6.563rem;  
   max-height: calc(100vh - 5.25rem);
   overflow-y: auto;
 }
