@@ -80,7 +80,7 @@ const Checkincomplete: FunctionComponent<PageProps> = ({ data }) => {
       <div className={`${styles.container} ${styles.containerwhite}`}>
         <header className={styles.header}>
           <BackButton />
-          <div className={styles.headertitle}>Check-in</div>
+          <div className={styles.headertitle}>Check-in complete</div>
           <div className={styles.headericon}>
             <UserIcon />
           </div>
@@ -153,7 +153,7 @@ const Checkincomplete: FunctionComponent<PageProps> = ({ data }) => {
               <div className={styles.divider} />
               <div className={flightStyles.addtowallet}>
                 <img src="/wallet.png" />
-                <LinkButton href="/checkincomplete">Add to Apple wallet</LinkButton>
+                <LinkButton href="">Add to Apple wallet</LinkButton>
               </div>
             </Card>
           </div>
