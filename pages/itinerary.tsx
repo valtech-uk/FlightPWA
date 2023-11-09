@@ -3,7 +3,7 @@ import BackButton from "../components/general/backButton";
 import BookingReference from "../components/itinerary/BookingReference";
 import globalStyles from "../styles/global";
 import styles from "../styles/common.module.css";
-import { motion } from "framer-motion";
+import { Variants, motion } from "framer-motion";
 import { PageProps } from "../types";
 import { variants1 } from "../transitionVariants";
 import UserIcon from "../icons/UserIcon";
@@ -32,7 +32,7 @@ export async function getStaticProps() {
   };
 }
 
-const Itinerary: FunctionComponent<PageProps> = ({ history, data }) => {
+const Itinerary: FunctionComponent<PageProps> = ({ data }) => {
   const {
     flightNumber,
     departureAirportCode,
@@ -42,12 +42,40 @@ const Itinerary: FunctionComponent<PageProps> = ({ history, data }) => {
     arrivalAirportName,
     arrivalDateTime,
   } = data[0]?.fields || {};
+
+  const itineraryVariants: Variants = {
+    initial: {
+      opacity: 0,
+      y: 80,
+      transition: {
+        duration: 0.2,
+        delay: 0.2,
+      },
+    },
+    out: {
+      opacity: 1,
+      y: 0,
+      transition: {
+        duration: 0.2,
+        delay: 0.2,
+      },
+    },
+    in: {
+      opacity: 1,
+      y: 0,
+      transition: {
+        duration: 0.2,
+        delay: 0.2,
+      },
+    },
+  };
+
   return (
     <motion.div
       key="itinerary"
-      variants={variants1}
+      variants={itineraryVariants}
       animate="in"
-      initial="out"
+      initial="initial"
       exit="out"
     >
       <Head>
@@ -57,7 +85,9 @@ const Itinerary: FunctionComponent<PageProps> = ({ history, data }) => {
         <header className={styles.header}>
           <BackButton />
           <div className={styles.headertitle}>My Itinerary</div>
-          <div className={styles.headericon}><UserIcon /></div>          
+          <div className={styles.headericon}>
+            <UserIcon />
+          </div>
         </header>
         <main className={styles.itinerary}>
           <div className={styles.itineraryimage}>

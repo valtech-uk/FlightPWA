@@ -1,22 +1,20 @@
 import React, { FunctionComponent } from "react";
 import BackButton from "../components/general/backButton";
 import styles from "../styles/common.module.css";
+import flightStyles from "../styles/flight.module.css";
 import globalStyles from "../styles/global";
 import Header from "../components/general/header";
 import PrivateRoute from "../components/general/privateRoute";
 import { useRouter } from "next/router";
 import { motion } from "framer-motion";
+import { Variants, motion } from "framer-motion";
 import { PageProps } from "../types";
 import Head from "next/head";
 import LinkButton from "../components/general/linkButton";
 import UserIcon from "../icons/UserIcon";
 import Card from "../components/general/card";
-import FlightCountdownItinerary from "../components/flight/FlightCountdownItinerary";
-import BookingReference from "../components/itinerary/BookingReference";
 import FlightHeading from "../components/flight/FlightHeading";
 import FlightCard from "../components/flight/FlightCard";
-import FlightDates from "../components/flight/FlightDates";
-import FlightAddExtras from "../components/flight/FlightAddExtras";
 import { createClient } from "contentful";
 
 export async function getStaticProps() {
@@ -34,7 +32,7 @@ export async function getStaticProps() {
   };
 }
 
-const Checkin: FunctionComponent<PageProps> = ({ history, data }) => {
+const Checkin: FunctionComponent<PageProps> = ({ data }) => {
   const {
     flightNumber,
     departureAirportCode,
@@ -44,9 +42,43 @@ const Checkin: FunctionComponent<PageProps> = ({ history, data }) => {
     arrivalAirportName,
     arrivalDateTime,
   } = data[0]?.fields || {};
+
+  const vars: Variants = {
+    initial: {
+      opacity: 0,
+      x: 390,
+      transition: {
+        duration: 0.2,
+        delay: 0.2,
+      },
+    },
+    out: {
+      opacity: 1,
+      x: 0,
+      transition: {
+        duration: 0.2,
+        delay: 0.2,
+      },
+    },
+    in: {
+      opacity: 1,
+      x: 0,
+      transition: {
+        duration: 0.2,
+        delay: 0.2,
+      },
+    },
+  };
+
   return (
   <PrivateRoute>
-    <motion.div key="checkin">
+    <motion.div
+      key="checkin"
+      variants={vars}
+      animate="in"
+      initial="initial"
+      exit="out"
+    >
       <Head>
         <meta name="theme-color" content="#ffffff" />
       </Head>
@@ -72,14 +104,62 @@ const Checkin: FunctionComponent<PageProps> = ({ history, data }) => {
                 arrivalAirportName={arrivalAirportName}
               />
               <div className={styles.checkinpassengers}>
-                <div>Passengers checked-in</div>
+                <div className={styles.checkinlisthead}>
+                  Passengers checked-in
+                </div>
+                <div className={styles.checkinlist}>
+                  <div className={styles.checkinlistname}>Brandon Smith</div>
+                  <div className={styles.checkinlistcta}>
+                    <LinkButton href="/checkincomplete" size="small">
+                      View boarding pass
+                    </LinkButton>
+                  </div>
+                </div>
+                <div className={styles.checkinlist}>
+                  <div className={styles.checkinlistname}>Sarah Smith</div>
+                  <div className={styles.checkinlistcta}>
+                    <LinkButton href="/checkincomplete" size="small">
+                      View boarding pass
+                    </LinkButton>
+                  </div>
+                </div>
               </div>
             </Card>
           </div>
-          <div className={styles.ctas}>
-            <LinkButton href="/checkincomplete">
-              Go to Check in complete
-            </LinkButton>
+          <div className={styles.checkincard}>
+            <Card>
+              <div className={flightStyles.flightheading}>Tue 21st Nov 2023</div>            
+              <FlightCard
+                arrivalDateTime={arrivalDateTime}
+                departureDateTime={departureDateTime}
+                flightNumber={"EZY2230"}
+                departureAirportCode={arrivalAirportCode}
+                departureAirportName={arrivalAirportName}
+                arrivalAirportCode={departureAirportCode}
+                arrivalAirportName={departureAirportName}
+              />
+              <div className={styles.checkinpassengers}>
+                <div className={styles.checkinlisthead}>
+                  Passengers checked-in
+                </div>
+                <div className={styles.checkinlist}>
+                  <div className={styles.checkinlistname}>Brandon Smith</div>
+                  <div className={styles.checkinlistcta}>
+                    <LinkButton href="/checkincomplete" size="small">
+                      View boarding pass
+                    </LinkButton>
+                  </div>
+                </div>
+                <div className={styles.checkinlist}>
+                  <div className={styles.checkinlistname}>Sarah Smith</div>
+                  <div className={styles.checkinlistcta}>
+                    <LinkButton href="/checkincomplete" size="small">
+                      View boarding pass
+                    </LinkButton>
+                  </div>
+                </div>
+              </div>
+            </Card>
           </div>
         </main>
         <style jsx global>

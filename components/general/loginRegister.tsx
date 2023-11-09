@@ -5,10 +5,10 @@ import Tab from "@mui/material/Tab";
 import tabsEjStyles from "../../styles/tabsEjStyles";
 import { ThemeProvider } from "@mui/material/styles";
 import theme from "../../theme";
-import { AppContext } from "../../context/appContext";
 import LinkButton from "./linkButton";
 import Card from "./card";
 import CustomTabPanel from "./customTabPanel";
+import DownloadAppButton from "../downloadApp/DownloadAppButton";
 
 const LoginRegister: FunctionComponent = () => {
   const [value, setValue] = useState(0);
@@ -54,6 +54,7 @@ const LoginRegister: FunctionComponent = () => {
                   <div className={styles.secctas}>
                     <a href="/">Forgotten your details?</a>
                   </div>
+                  <DownloadAppButton />
                 </div>
               </div>
             </CustomTabPanel>

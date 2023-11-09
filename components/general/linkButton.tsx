@@ -7,17 +7,21 @@ type Props = {
   children?: React.ReactNode;
   href: string;
   style?: "primary" | "secondary";
+  size?: "default" | "small";
 };
 
 const LinkButton: FunctionComponent<Props> = ({
   children,
   href,
   style = "primary",
+  size = "default",
 }) => {
   return (
     <Link
       href={href}
-      className={`${styles.button} ${style === "secondary" && styles.secondary}`}
+      className={`${styles.button} ${
+        style === "secondary" && styles.secondary
+      } ${size === "small" && styles.small}`}
     >
       {children}
       <ChevronRightIcon />
