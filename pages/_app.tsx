@@ -1,3 +1,4 @@
+"use client";
 import type { AppProps } from "next/app";
 import "../styles/transitions.module.css";
 import Transition from "../components/transition";
