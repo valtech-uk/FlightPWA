@@ -1,6 +1,6 @@
 "use client";
 import type { AppProps } from "next/app";
-import Transition from "../components/transitions";
+import Transition from "../components/transition";
 import AppContextProvider from "../context/appContext";
 import "../styles/transitions.module.css";
 import HeadComp from "../components/general/head";

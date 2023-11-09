@@ -58,114 +58,106 @@ const Home: FunctionComponent<PageProps> = ({ history, data }) => {
 
   return (
   <PrivateRoute>
-    <motion.div
-      key="/homepage"
-      variants={variants1}
-      animate="in"
-      initial="out"
-      exit="out"
-    >
-      <Head>
-        <meta name="theme-color" content="#ff6600" />
-      </Head>
-      <div className={`${styles.container} ${styles.containerwithnav}`}>
-        <header className={styles.homeheader}>
-          <div className={styles.homeheaderuser}>
-            <UserIcon />
-          </div>
-        </header>
-        <div className={styles.greyback} />
-        <main className={styles.main}>
-          <div className={homeStyles.personalisation}>
-            <h1>Hello {context?.user?.username}</h1>
-            <h2>Where will you go next?</h2>
-          </div>
+    <Head>
+      <meta name="theme-color" content="#ff6600" />
+    </Head>
+    <div className={`${styles.container} ${styles.containerwithnav}`}>
+      <header className={styles.homeheader}>
+        <div className={styles.homeheaderuser}>
+          <UserIcon />
+        </div>
+      </header>
+      <div className={styles.greyback} />
+      <main className={styles.main}>
+        <div className={homeStyles.personalisation}>
+          <h1>Hello {context?.user?.username}</h1>
+          <h2>Where will you go next?</h2>
+        </div>
 
-          <div className={homeStyles.homemaincard}>
-            <Card>
-              <FlightCountdownHome />
-              <div className={styles.cardimage}>
-                <img src="/alicante.png" />
-              </div>
-              <FlightCard
-                arrivalDateTime={arrivalDateTime}
-                departureDateTime={departureDateTime}
-                flightNumber={flightNumber}
-                departureAirportCode={departureAirportCode}
-                departureAirportName={departureAirportName}
-                arrivalAirportCode={arrivalAirportCode}
-                arrivalAirportName={arrivalAirportName}
-              />
-              <FlightDates
-                arrivalDateTime={arrivalDateTime}
-                departureDateTime={departureDateTime}
-              />
-              <div className={styles.divider} />
-              <FlightFootnote />
-              <div className={styles.ctas}>
-                <LinkButton href="/itinerary">View itinerary</LinkButton>
-              </div>
-            </Card>
-          </div>
+        <div className={homeStyles.homemaincard}>
+          <Card>
+            <FlightCountdownHome />
+            <div className={styles.cardimage}>
+              <img src="/alicante.png" />
+            </div>
+            <FlightCard
+              arrivalDateTime={arrivalDateTime}
+              departureDateTime={departureDateTime}
+              flightNumber={flightNumber}
+              departureAirportCode={departureAirportCode}
+              departureAirportName={departureAirportName}
+              arrivalAirportCode={arrivalAirportCode}
+              arrivalAirportName={arrivalAirportName}
+            />
+            <FlightDates
+              arrivalDateTime={arrivalDateTime}
+              departureDateTime={departureDateTime}
+            />
+            <div className={styles.divider} />
+            <FlightFootnote />
+            <div className={styles.ctas}>
+              <LinkButton href="/itinerary">View itinerary</LinkButton>
+            </div>
+          </Card>
+        </div>
 
-          <div className={homeStyles.hometabs}>
-            <ThemeProvider theme={theme}>
-              <Tabs
-                value={value}
-                onChange={handleChange}
-                centered
-                sx={tabsEjStyles}
-              >
-                <Tab label="Flights" />
-                <Tab label="Holidays" />
-              </Tabs>
-            </ThemeProvider>
-          </div>
+        <div className={homeStyles.hometabs}>
+          <ThemeProvider theme={theme}>
+            <Tabs
+              value={value}
+              onChange={handleChange}
+              centered
+              sx={tabsEjStyles}
+            >
+              <Tab label="Flights" />
+              <Tab label="Holidays" />
+            </Tabs>
+          </ThemeProvider>
+        </div>
 
-          <div className={homeStyles.homecardsub}>
-            <Card>
-              <CustomTabPanel value={value} index={0}>
-                <div className={homeStyles.bookflights}>
-                  <div className={homeStyles.bookflightshead}>
-                    <div className={homeStyles.bookflightsicon}>
-                      <SearchIcon />
-                    </div>
-                    <span>Book flights</span>
+        <div className={homeStyles.homecardsub}>
+          <Card>
+            <CustomTabPanel value={value} index={0}>
+              <div className={homeStyles.bookflights}>
+                <div className={homeStyles.bookflightshead}>
+                  <div className={homeStyles.bookflightsicon}>
+                    <SearchIcon />
                   </div>
-                  <div className={homeStyles.bookflightsimage} />
-                  <div className={styles.ctas}>
-                    <LinkButton href="" style="secondary">
-                      Book flights
-                    </LinkButton>
-                  </div>
+                  <span>Book flights</span>
                 </div>
-              </CustomTabPanel>
-              <CustomTabPanel value={value} index={1}>
-                <div className={homeStyles.bookflights}>
-                  <div className={homeStyles.bookflightshead}>
-                    <div className={homeStyles.bookflightsicon}>
-                      <SearchIcon />
-                    </div>
-                    <span>Holidays</span>
-                  </div>
-                  <div className={homeStyles.bookflightsimage} />
-                  <div className={styles.ctas}>
-                    <LinkButton href="" style="secondary">
-                      Find holidays
-                    </LinkButton>
-                  </div>
+                <div className={homeStyles.bookflightsimage} />
+                <div className={styles.ctas}>
+                  <LinkButton href="" style="secondary">
+                    Book flights
+                  </LinkButton>
                 </div>
-              </CustomTabPanel>
-            </Card>
-          </div>
-        </main>
+              </div>
+            </CustomTabPanel>
+            <CustomTabPanel value={value} index={1}>
+              <div className={homeStyles.bookflights}>
+                <div className={homeStyles.bookflightshead}>
+                  <div className={homeStyles.bookflightsicon}>
+                    <SearchIcon />
+                  </div>
+                  <span>Holidays</span>
+                </div>
+                <div className={homeStyles.bookflightsimage} />
+                <div className={styles.ctas}>
+                  <LinkButton href="" style="secondary">
+                    Find holidays
+                  </LinkButton>
+                </div>
+              </div>
+            </CustomTabPanel>
+          </Card>
+        </div>
+      </main>
 
-        <style jsx global>
-          {globalStyles}
-        </style>
-      </div>
-      <BottomNavigation current={"index"} />
-    </motion.div>
+      <style jsx global>
+        {globalStyles}
+      </style>
+    </div>
+    <BottomNavigation current={"index"} />
   </PrivateRoute>
   );
 };
