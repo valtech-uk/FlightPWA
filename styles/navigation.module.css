@@ -88,5 +88,9 @@
 }
 
 .backbutton svg {
-  transform: translateY(3px);
+  transform: translateY(2px);
+}
+
+.backbutton span {
+  transform: translate(-3px, -3px);
 }

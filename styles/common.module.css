@@ -3,18 +3,17 @@
   display: flex;
   flex-direction: column;
   position: relative;
-  min-height: calc(100vh - 5.25rem);
-  max-height: calc(100vh - 5.25rem);
-  overflow-y: auto;
-  padding-bottom: 6.563rem;
+  min-height: 100vh;
 }
 
-.container2 {
-  width: 100%;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  position: relative;
+.containerwithnav {
+  padding-bottom: 6.563rem;
+  /* min-height: calc(100vh - 5.25rem); */
+  max-height: calc(100vh - 5.25rem);
+  overflow-y: auto;
+}
+
+.containerwhite {
   background-color: #fff;
 }
 
@@ -29,7 +28,7 @@
   top: 14rem;
   left: 0;
   background-color: #dfecec;
-  height: calc(100vh - 14rem + 5.25rem);
+  height: calc(100% + 14rem);
   display: block;
   width: 100%;
 }
@@ -62,10 +61,24 @@
 
 .header {
   width: 100%;
-  padding: 1rem;
+  padding: 1rem 2.5rem 1rem 1.938rem;
   display: flex;
   align-items: center;
   justify-content: space-between;
+  height: 4.063rem;
+}
+
+.headertitle {
+  transform: translate(-1rem, -1px);
+}
+
+.headericon svg {
+  width: 1rem;
+  height: 1rem;
+}
+
+.headericon path {
+  fill: #000;
 }
 
 .headerlogin {
@@ -127,6 +140,7 @@
   font-size: 0.875rem;
   width: 100%;
   color: #000;
+  background-color: #f1f1f1;
 }
 
 .ctas {
@@ -134,9 +148,12 @@
   text-align: center;
 }
 
+.ctas:last-child a {
+  margin-bottom: 0;
+}
+
 .secctas {
   padding-bottom: 1rem;
-  margin-top: -1rem;
 }
 
 .secctas a {
@@ -166,9 +183,6 @@
   border-bottom: solid 1px #e2e2e2;
 }
 
-.title {
-}
-
 .cardimage {
   margin: 0 -1.25rem 1rem;
   width: calc(100% + 2.5rem);
@@ -182,6 +196,7 @@
   border-radius: 2rem 2rem 0 0;
   background-color: #dfecec;
   overflow: hidden;
+  min-height: calc(100vh - 4.063rem);
 }
 
 .itineraryimage {
@@ -237,4 +252,12 @@
   color: #707070;
   flex: 0 0 50%;
   margin-right: 0.5rem;
+}
+
+.checkincard {
+  padding: 1.25rem;
+}
+
+.checkinpassengers {
+  padding: 1rem 0;
 }

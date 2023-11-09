@@ -7,12 +7,12 @@ export default css.global`
   html,
   body {
     padding: 0;
-    margin: 0;    
+    margin: 0;
   }
   body {
     font-family: "tondo";
     font-weight: 400;
-    background-color: lightgrey;
+    background-color: #f60;
     background-image: url("/bg.png");
     background-size: cover;
     background-repeat: no-repeat;
@@ -28,7 +28,7 @@ export default css.global`
   h5 {
     font-weight: normal;
     padding: 0;
-    margin: 0; 
+    margin: 0;
   }
   button,
   input {

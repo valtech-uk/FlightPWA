@@ -53,11 +53,11 @@ const Itinerary: FunctionComponent<PageProps> = ({ history, data }) => {
       <Head>
         <meta name="theme-color" content="#ffffff" />
       </Head>
-      <div className={styles.container2}>
+      <div className={`${styles.container} ${styles.containerwhite}`}>
         <header className={styles.header}>
           <BackButton />
-          <div className={styles.title}>My itinerary</div>
-          <UserIcon />
+          <div className={styles.headertitle}>My Itinerary</div>
+          <div className={styles.headericon}><UserIcon /></div>          
         </header>
         <main className={styles.itinerary}>
           <div className={styles.itineraryimage}>

@@ -13,7 +13,7 @@ const Checkincomplete: FunctionComponent<PageProps> = ({ history }) => {
       <Head>
         <meta name="theme-color" content="transparent" />
       </Head>
-      <div className={styles.container2}>
+      <div className={`${styles.container} ${styles.containerwhite}`}>
         <Header />
         <BackButton />
         <main className={styles.main}>Checkin Complete</main>

@@ -21,7 +21,7 @@ const Login: FunctionComponent<PageProps> = ({ history }) => {
       <Head>
         <meta name="theme-color" content="#ff6600" />
       </Head>
-      <div className={styles.container}>
+      <div className={`${styles.container}`}>
         <header className={styles.headerlogin}>
           <Link href={"/"}>
             <img src="/easyJet-logo-diap.svg" />
