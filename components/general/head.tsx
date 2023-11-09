@@ -13,7 +13,7 @@ const HeadComp: FunctionComponent = () => {
       <link rel="apple-touch-icon" href="/icon-512x512.png" />
       <meta
         name="apple-itunes-app"
-        content="app-id=id483568103, app-argument=https://apps.apple.com/ua/app/easyjet-travel-app/id483568103?l=uk"
+        content="app-id=483568103, app-argument=https://apps.apple.com/ua/app/easyjet-travel-app/id483568103?l=uk"
       />
     </Head>
   );
