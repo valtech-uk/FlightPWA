@@ -14,21 +14,26 @@ const PrivateRoute: FunctionComponent<PrivateRouteProps> = ({ children }) => {
     const [countdown, setCountdown] = useState(5);
 
     useEffect(() => {
-        const redirectTimeout = setTimeout(() => {
-            router.push('/registerLogin');
-        }, countdown * 1000);
+        let redirectTimeout: NodeJS.Timeout;
+        let countdownInterval: NodeJS.Timeout;
 
-        const countdownInterval = setInterval(() => {
-            if (countdown > 0) {
-                setCountdown(countdown - 1);
-            }
-        }, 1000);
+        if (!isLoading && !isAuthorized) {
+            redirectTimeout = setTimeout(() => {
+                router.push('/registerLogin');
+            }, countdown * 1000);
+
+            countdownInterval = setInterval(() => {
+                if (countdown > 0) {
+                    setCountdown(countdown - 1);
+                }
+            }, 1000);
+        }
 
         return () => {
             clearTimeout(redirectTimeout);
             clearInterval(countdownInterval);
         }
-    }, [isAuthorized, isLoading, countdown]);
+    }, [isAuthorized, isLoading, countdown, router]);
 
     if(isLoading)return <p>Loading, please wait</p>
     if(!isLoading && !isAuthorized)return <p>You need to be logged in to access this page. Redirect to login page in {countdown} sec</p>
