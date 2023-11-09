@@ -1,30 +1,28 @@
 import React, { FunctionComponent } from "react";
 import BackButton from "../components/general/backButton";
-import BottomNavigation from "../components/general/bottomNavigation";
 import styles from "../styles/common.module.css";
 import globalStyles from "../styles/global";
-import HeadComp from "../components/general/head";
 import Header from "../components/general/header";
+import { PageProps } from "../types";
+import Head from "next/head";
+import { motion } from "framer-motion";
 
-type CheckinProps = {
-  someBool: boolean;
-};
-
-const CheckinComplete: FunctionComponent<CheckinProps> = ({
-  someBool = true,
-}) => {
+const Checkincomplete: FunctionComponent<PageProps> = ({ history }) => {
   return (
-    <div className={styles.container}>
-      <HeadComp />
-      <Header />
-      <BackButton />
-      <main className={styles.main}>Checkin Complete</main>
-      <BottomNavigation current={"itinerary"} />
-      <style jsx global>
-        {globalStyles}
-      </style>
-    </div>
+    <motion.div key="checkincomplete">
+      <Head>
+        <meta name="theme-color" content="transparent" />
+      </Head>
+      <div className={`${styles.container} ${styles.containerwhite}`}>
+        <Header />
+        <BackButton />
+        <main className={styles.main}>Checkin Complete</main>
+        <style jsx global>
+          {globalStyles}
+        </style>
+      </div>
+    </motion.div>
   );
 };
 
-export default CheckinComplete;
+export default Checkincomplete;

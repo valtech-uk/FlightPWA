@@ -1,0 +1,101 @@
+.flightrow1 {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.flightnum {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.875rem;
+}
+
+.flightnum div {
+  margin-top: 0.2rem;
+  color: #707070;
+}
+
+.flightnum svg {
+  transform: rotate(45deg);
+}
+
+.flightcode {
+  text-transform: uppercase;
+  font-size: 2rem;
+}
+
+.flightdepart {
+  font-size: 0.875rem;
+  line-height: 1.8;
+}
+
+.flightarrive {
+  font-size: 0.875rem;
+  text-align: right;
+  line-height: 1.8;
+}
+
+.flightdate {
+  color: #707070;
+}
+
+.flightaddextras {
+  text-align: center;
+}
+
+.flightaddextrasheading {
+  font-size: 1.125rem;
+  margin-bottom: 0.1rem;
+}
+
+.flightaddextrasparagraph {
+  font-size: 0.875rem;
+}
+
+.flightheadinghome {
+  font-weight: 700;
+  text-align: center;
+  margin-bottom: 0.25rem;
+}
+
+.flightheading {
+  font-weight: 700;
+}
+
+.flightcountdownitinerary {
+  font-weight: 700;
+  text-align: center;
+}
+
+.flightdays {
+  font-weight: 300;
+  font-size: 1.5rem;
+  text-align: center;
+}
+
+.flightcountdownhome {
+  margin-bottom: 0.625rem;
+  margin-top: -0.313rem;
+}
+
+.flightfootnote {
+  text-align: center;
+}
+
+.bookingreference {
+  font-weight: 700;
+  font-size: 1.125rem;
+}
+
+.bookingreferencenumber {
+  font-size: 1.125rem;
+}
+
+.bookingreferencenote {
+  font-size: 0.875rem;
+  color: #707070;
+  padding: 1rem 0;
+}

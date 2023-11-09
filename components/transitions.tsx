@@ -4,17 +4,17 @@ import { useRouter } from "next/router";
 const variants = {
   out: {
     opacity: 0,
-    y: 40,
+    y: 80,
     transition: {
-      duration: 0.75,
+      duration: 0.3,
     },
   },
   in: {
     opacity: 1,
     y: 0,
     transition: {
-      duration: 0.75,
-      delay: 0.5,
+      duration: 0.3,
+      delay: 0.2,
     },
   },
 };
@@ -24,7 +24,7 @@ const Transition = ({ children }) => {
   return (
     <div className="effect-1">
       <AnimatePresence initial={false} mode="wait">
-        <motion.div
+        {/* <motion.div
           key={asPath}
           variants={variants}
           animate="in"
@@ -32,7 +32,8 @@ const Transition = ({ children }) => {
           exit="out"
         >
           {children}
-        </motion.div>
+        </motion.div> */}
+        {children}
       </AnimatePresence>
     </div>
   );

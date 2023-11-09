@@ -1,9 +1,20 @@
 .container {
   width: 100%;
-  min-height: 100vh;
   display: flex;
   flex-direction: column;
   position: relative;
+  min-height: 100vh;
+}
+
+.containerwithnav {
+  padding-bottom: 6.563rem;
+  /* min-height: calc(100vh - 5.25rem); */
+  max-height: calc(100vh - 5.25rem);
+  overflow-y: auto;
+}
+
+.containerwhite {
+  background-color: #fff;
 }
 
 .main {
@@ -11,37 +22,96 @@
   padding: 1rem;
 }
 
+.greyback {
+  position: absolute;
+  z-index: -1;
+  top: 14rem;
+  left: 0;
+  background-color: #dfecec;
+  height: calc(100% + 14rem);
+  display: block;
+  width: 100%;
+}
+
+.homeheader {
+  width: 100%;
+  padding: 2rem 1rem 0;
+  display: flex;
+  justify-content: flex-end;
+}
+
+.homeheaderuser {
+  width: 2rem;
+  height: 2rem;
+  background-color: #fff;
+  border-radius: 50px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.homeheaderuser svg {
+  width: 0.875rem;
+  height: 0.875rem;
+}
+
+.homeheaderuser path {
+  fill: #000;
+}
+
 .header {
   width: 100%;
-  padding: 1rem;
+  padding: 1rem 2.5rem 1rem 1.938rem;
   display: flex;
   align-items: center;
   justify-content: space-between;
-  height: 5.25rem;
+  height: 4.063rem;
+}
+
+.headertitle {
+  transform: translate(-1rem, -1px);
+}
+
+.headericon svg {
+  width: 1rem;
+  height: 1rem;
+}
+
+.headericon path {
+  fill: #000;
 }
 
 .headerlogin {
   width: 100%;
-  padding: 1rem;
+  padding: 3.563rem 0 2rem;
   display: flex;
   align-items: center;
   justify-content: center;
-  height: 5.25rem;
+  height: 8.063rem;
+}
+
+.headerlogin a {
+  display: block;
 }
 
 .headerlogin img {
-  width: 113px;
-  height: 25px;
+  display: block;
+  width: 178px;
+  height: 40px;
 }
 
 .loginregister {
   width: 100%;
-  min-height: calc(100vh - 5.25rem);
+  min-height: 100vh;
   display: flex;
   flex-direction: column;
   position: relative;
-  background-color: #fff;
   padding: 1rem;
+  padding-top: 0;
+}
+
+.loginregisterwrapper {
+  padding-top: 0.625rem;
 }
 
 .loginform {
@@ -70,9 +140,124 @@
   font-size: 0.875rem;
   width: 100%;
   color: #000;
+  background-color: #f1f1f1;
 }
 
 .ctas {
   width: 100%;
   text-align: center;
+}
+
+.ctas:last-child a {
+  margin-bottom: 0;
+}
+
+.secctas {
+  padding-bottom: 1rem;
+}
+
+.secctas a {
+  font-size: 0.875rem;
+  color: #707070;
+  position: relative;
+  display: inline-block;
+  text-decoration: none;
+}
+
+.secctas a::after {
+  content: "";
+  display: block;
+  position: absolute;
+  bottom: -2px;
+  width: 100%;
+  left: 0;
+  height: 1.5px;
+  background-color: #707070;
+}
+
+.divider {
+  display: block;
+  width: 100%;
+  padding-top: 1rem;
+  margin-bottom: 1rem;
+  border-bottom: solid 1px #e2e2e2;
+}
+
+.cardimage {
+  margin: 0 -1.25rem 1rem;
+  width: calc(100% + 2.5rem);
+}
+
+.cardimage img {
+  display: block;
+}
+
+.itinerary {
+  border-radius: 2rem 2rem 0 0;
+  background-color: #dfecec;
+  overflow: hidden;
+  min-height: calc(100vh - 4.063rem);
+}
+
+.itineraryimage {
+  margin: -1.25rem 0 0;
+  width: calc(100% + 2.5rem);
+}
+
+.itineraryimage img {
+  display: block;
+}
+
+.itinerarycard {
+  position: relative;
+  padding: 0 1.25rem;
+  margin: -2.5rem 0 0;
+}
+
+.itinerarycardsub {
+  padding: 1.25rem;
+}
+
+.itinerarycardsub + .itinerarycardsub {
+  padding-top: 0;
+}
+
+.itinerarysiri {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.itineraryaddsiri {
+  display: flex;
+  align-items: center;
+  border: solid 1px #707070;
+  border-radius: 2rem;
+  padding: 0.2rem 0.5rem;
+  font-weight: 700;
+  text-decoration: none;
+  color: #000;
+  flex: 0 0 50%;
+}
+
+.itineraryaddsiri img {
+  width: 2rem;
+  height: 2rem;
+  display: inline-block;
+  margin-right: 0.5rem;
+}
+
+.itinerarysiritext {
+  font-size: 0.875rem;
+  color: #707070;
+  flex: 0 0 50%;
+  margin-right: 0.5rem;
+}
+
+.checkincard {
+  padding: 1.25rem;
+}
+
+.checkinpassengers {
+  padding: 1rem 0;
 }

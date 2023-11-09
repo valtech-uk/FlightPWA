@@ -8,12 +8,12 @@ const theme = createTheme({
       // dark: will be calculated from palette.primary.main,
       contrastText: "#fff" // will be calculated to contrast with palette.primary.main
     },
-    // secondary: {
-    //   main: '#E0C2FF',
-    //   light: '#F5EBFF',
-    //   // dark: will be calculated from palette.secondary.main,
-    //   contrastText: '#47008F',
-    // },
+    secondary: {
+      main: '#0000',
+      // light: '#F5EBFF',
+      // dark: will be calculated from palette.secondary.main,
+      contrastText: '#fff',
+    },
   },
   components: {
     MuiTabs: {

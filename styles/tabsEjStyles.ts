@@ -15,7 +15,7 @@ const tabsEjStyles: SxProps<typeof theme> = [
   },
   {
     div: {
-      columnGap: "1rem",
+      columnGap: "2rem",
     },
   },
 ];
