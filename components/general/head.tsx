@@ -10,9 +10,11 @@ const HeadComp: FunctionComponent = () => {
       <link rel="stylesheet" href="https://use.typekit.net/val5czu.css" />
       <meta name="viewport" content="width=device-width, initial-scale=1" />
       <meta name="theme-color" content="#ff6600" />
-      <meta name="apple-mobile-web-app-capable" content="yes" />
-      <meta name="apple-mobile-web-app-status-bar-style" content="#ff6600" />
-      <meta name="apple-mobile-web-app-title" content="My App" />
+      <link rel="apple-touch-icon" href="/icon-512x512.png" />
+      <meta
+        name="apple-itunes-app"
+        content="app-id=id483568103, app-argument=https://apps.apple.com/ua/app/easyjet-travel-app/id483568103?l=uk"
+      />
     </Head>
   );
 };
