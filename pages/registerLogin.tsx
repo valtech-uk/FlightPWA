@@ -1,8 +1,9 @@
 'use client'
 
 import { FunctionComponent, useEffect } from "react";
+import { PageProps } from "../types";
 
-export async function getStaticProps(){
+export function getStaticProps(){
     return {
         props: {
             appID: process.env.NEXT_PUBLIC_PASSAGE_APP_ID
@@ -10,7 +11,7 @@ export async function getStaticProps(){
     };
 }
 
-const RegisterLogin: FunctionComponent = ({appID}) => {
+const RegisterLogin: FunctionComponent<PageProps> = ({appID}) => {
 
     useEffect(()=>{
         require('@passageidentity/passage-elements/passage-auth');
