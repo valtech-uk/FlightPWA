@@ -3,7 +3,7 @@ import styles from "../styles/common.module.css";
 import homeStyles from "../styles/home.module.css";
 import BottomNavigation from "../components/general/bottomNavigation";
 import globalStyles from "../styles/global";
-import { motion } from "framer-motion";
+import { Variants, motion } from "framer-motion";
 import { PageProps } from "../types";
 import { variants1 } from "../transitionVariants";
 import Card from "../components/general/card";
@@ -57,13 +57,7 @@ const Home: FunctionComponent<PageProps> = ({ history, data }) => {
   };
 
   return (
-    <motion.div
-      key="/homepage"
-      variants={variants1}
-      animate="in"
-      initial="out"
-      exit="out"
-    >
+    <>
       <Head>
         <meta name="theme-color" content="#ff6600" />
       </Head>
@@ -164,7 +158,7 @@ const Home: FunctionComponent<PageProps> = ({ history, data }) => {
         </style>
       </div>
       <BottomNavigation current={"index"} />
-    </motion.div>
+    </>
   );
 };
 

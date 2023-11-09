@@ -3,21 +3,12 @@ import styles from "../styles/common.module.css";
 import LoginRegister from "../components/general/loginRegister";
 import globalStyles from "../styles/global";
 import Link from "next/link";
-import { AppContext } from "../context/appContext";
-import { motion } from "framer-motion";
 import { PageProps } from "../types";
-import { variants1 } from "../transitionVariants";
 import Head from "next/head";
 
-const Login: FunctionComponent<PageProps> = ({ history }) => {
+const Login: FunctionComponent<PageProps> = () => {
   return (
-    <motion.div
-      key="index"
-      variants={variants1}
-      animate="in"
-      initial="out"
-      exit="out"
-    >
+    <>
       <Head>
         <meta name="theme-color" content="#ff6600" />
       </Head>
@@ -32,7 +23,7 @@ const Login: FunctionComponent<PageProps> = ({ history }) => {
           {globalStyles}
         </style>
       </div>
-    </motion.div>
+    </>
   );
 };
 

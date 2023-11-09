@@ -4,6 +4,8 @@
   flex-direction: column;
   position: relative;
   min-height: 100vh;
+  margin: 0 auto;
+  max-width: 480px;
 }
 
 .containerwithnav {
@@ -153,7 +155,7 @@
 }
 
 .secctas {
-  padding-bottom: 1rem;
+  padding: 1rem 0;
 }
 
 .secctas a {
@@ -184,8 +186,8 @@
 }
 
 .cardimage {
-  margin: 0 -1.25rem 1rem;
-  width: calc(100% + 2.5rem);
+  margin: 0 -1rem 1rem;
+  width: calc(100% + 2rem);
 }
 
 .cardimage img {
@@ -200,8 +202,8 @@
 }
 
 .itineraryimage {
-  margin: -1.25rem 0 0;
-  width: calc(100% + 2.5rem);
+  margin: -1rem 0 0;
+  width: calc(100% + 2rem);
 }
 
 .itineraryimage img {
@@ -210,12 +212,12 @@
 
 .itinerarycard {
   position: relative;
-  padding: 0 1.25rem;
-  margin: -2.5rem 0 0;
+  padding: 0 1rem;
+  margin: -2rem 0 0;
 }
 
 .itinerarycardsub {
-  padding: 1.25rem;
+  padding: 1rem;
 }
 
 .itinerarycardsub + .itinerarycardsub {
@@ -255,9 +257,47 @@
 }
 
 .checkincard {
-  padding: 1.25rem;
+  padding: 1rem;
+}
+
+.checkincard + .checkincard {
+  padding-top: 0;
 }
 
 .checkinpassengers {
-  padding: 1rem 0;
+  padding: 1.5rem 0 0;
+}
+
+.checkinlisthead {
+  padding: 0 0 0.5rem 0;
+}
+
+.checkinlist {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border-top: solid 1px #e2e2e2;
+}
+
+.checkinlist:last-child {
+  margin-bottom: -1rem;
+}
+
+.checkinlistname {
+  font-weight: 700;
+  font-size: 0.875rem;
+}
+
+.checkinlistcta a {
+  margin: 0.95rem 0;
+}
+
+.checkedinhead {
+  padding: 2rem 2.25rem 0.5rem 2.25rem;
+  font-size: 1.5rem;
+}
+
+.checkedinintro {
+  padding: 0.5rem 2.25rem;
+  font-size: 0.875rem;
 }

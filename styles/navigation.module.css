@@ -1,10 +1,10 @@
 .bottomnavigation {
   display: flex;
   width: 100%;
-  max-width: 100%;
+  max-width: 480px;
   align-items: center;
   justify-content: center;
-  margin: 0;
+  margin: 0 auto;
   padding: 0;
   list-style: none;
   position: absolute;
@@ -13,7 +13,8 @@
   height: 5.25rem;
   background-color: #fff;
   border-top: solid 1px #d4d4d4;
-  
+  left: 0;
+  right: 0;
 }
 
 .bottomnavigation li {

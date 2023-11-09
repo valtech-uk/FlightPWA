@@ -1,4 +1,4 @@
 export type PageProps = {
-  history?: string[];
+  history?: string;
   data: any;
 };
