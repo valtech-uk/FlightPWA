@@ -24,6 +24,7 @@ import tabsEjStyles from "../styles/tabsEjStyles";
 import CustomTabPanel from "../components/general/customTabPanel";
 import SearchIcon from "../icons/SearchIcon";
 import PrivateRoute from "../components/general/privateRoute";
+import {useAppContext} from "../context/appContext";
 
 export async function getStaticProps() {
   const client = createClient({
@@ -41,6 +42,7 @@ export async function getStaticProps() {
 }
 
 const Home: FunctionComponent<PageProps> = ({ history, data }) => {
+  const {context} = useAppContext();
   const {
     flightNumber,
     departureAirportCode,
@@ -78,7 +80,7 @@ const Home: FunctionComponent<PageProps> = ({ history, data }) => {
         <div className={styles.greyback} />
         <main className={styles.main}>
           <div className={homeStyles.personalisation}>
-            <h1>Hello Brandon</h1>
+            <h1>Hello {context?.user?.username}</h1>
             <h2>Where will you go next?</h2>
           </div>
 
