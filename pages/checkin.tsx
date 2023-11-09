@@ -12,7 +12,6 @@ import Card from "../components/general/card";
 import FlightHeading from "../components/flight/FlightHeading";
 import FlightCard from "../components/flight/FlightCard";
 import { createClient } from "contentful";
-import { variants2 } from "../transitionVariants";
 
 export async function getStaticProps() {
   const client = createClient({

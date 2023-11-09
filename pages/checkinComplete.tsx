@@ -3,7 +3,6 @@ import BackButton from "../components/general/backButton";
 import styles from "../styles/common.module.css";
 import flightStyles from "../styles/flight.module.css";
 import globalStyles from "../styles/global";
-import Header from "../components/general/header";
 import { PageProps } from "../types";
 import Head from "next/head";
 import { Variants, motion } from "framer-motion";

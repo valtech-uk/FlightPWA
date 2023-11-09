@@ -32,7 +32,7 @@ export async function getStaticProps() {
   };
 }
 
-const Itinerary: FunctionComponent<PageProps> = ({ history, data }) => {
+const Itinerary: FunctionComponent<PageProps> = ({ data }) => {
   const {
     flightNumber,
     departureAirportCode,
@@ -42,7 +42,6 @@ const Itinerary: FunctionComponent<PageProps> = ({ history, data }) => {
     arrivalAirportName,
     arrivalDateTime,
   } = data[0]?.fields || {};
-  console.log("history", history);
 
   const itineraryVariants: Variants = {
     initial: {
