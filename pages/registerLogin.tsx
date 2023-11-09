@@ -2,6 +2,14 @@
 
 import { FunctionComponent, useEffect } from "react";
 
+export async function getStaticProps(){
+    return {
+        props: {
+            appID: process.env.NEXT_PUBLIC_PASSAGE_APP_ID
+        }
+    };
+}
+
 const RegisterLogin: FunctionComponent = ({appID}) => {
 
     useEffect(()=>{
@@ -13,14 +21,6 @@ const RegisterLogin: FunctionComponent = ({appID}) => {
             <passage-auth app-id={appID}></passage-auth>
         </>
     )
-}
-
-export async function getStaticProps(){
-    return {
-        props: {
-            appID: process.env.NEXT_PUBLIC_PASSAGE_APP_ID
-        }
-    };
 }
 
 export default RegisterLogin;
