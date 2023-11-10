@@ -90,7 +90,7 @@ const Checkin: FunctionComponent<PageProps> = ({ data }) => {
         <main className={styles.itinerary}>
           <div className={styles.checkincard}>
             <Card>
-              <FlightDateHeading date={arrivalDateTime} />
+              <FlightDateHeading date={departureDateTime} />
               <FlightCard
                 arrivalDateTime={arrivalDateTime}
                 departureDateTime={departureDateTime}
