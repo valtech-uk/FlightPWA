@@ -1,5 +1,6 @@
 import { ReactHTML } from 'react';
-import { BeforeAuthCallback, OnSuccessCallback } from "@passageidentity/passage-elements";
+import {BeforeAuthCallback, OnSuccessCallback} from "@passageidentity/passage-auth";
+// import { BeforeAuthCallback, OnSuccessCallback } from "@passageidentity/passage-elements";
 
 declare global {
     namespace JSX {
