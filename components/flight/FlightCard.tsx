@@ -1,4 +1,4 @@
-import React, { FC } from "react";
+import React, { FunctionComponent } from "react";
 import styles from "../../styles/flight.module.css";
 import FlightIcon from "../../icons/FlightIcon";
 import moment from "moment";
@@ -13,7 +13,7 @@ type FlightCardProps = {
   arrivalDateTime: Date;
 };
 
-const FlightCard: FC<FlightCardProps> = ({
+const FlightCard: FunctionComponent<FlightCardProps> = ({
   flightNumber,
   departureAirportCode,
   departureDateTime,

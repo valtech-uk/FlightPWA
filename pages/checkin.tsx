@@ -1,4 +1,4 @@
-import React, { FunctionComponent } from "react";
+import React, { FunctionComponent, useEffect, useState } from "react";
 import BackButton from "../components/general/backButton";
 import styles from "../styles/common.module.css";
 import flightStyles from "../styles/flight.module.css";
@@ -9,9 +9,9 @@ import Head from "next/head";
 import LinkButton from "../components/general/linkButton";
 import UserIcon from "../icons/UserIcon";
 import Card from "../components/general/card";
-import FlightHeading from "../components/flight/FlightHeading";
 import FlightCard from "../components/flight/FlightCard";
 import { createClient } from "contentful";
+import FlightDateHeading from "../components/flight/FlightDateHeading";
 
 export async function getStaticProps() {
   const client = createClient({
@@ -37,6 +37,7 @@ const Checkin: FunctionComponent<PageProps> = ({ data }) => {
     arrivalAirportCode,
     arrivalAirportName,
     arrivalDateTime,
+    returnFlightNumber,
   } = data[0]?.fields || {};
 
   const vars: Variants = {
@@ -66,6 +67,12 @@ const Checkin: FunctionComponent<PageProps> = ({ data }) => {
     },
   };
 
+  function addDays(date: Date, days: number, minutes: number) {
+    const newDate = new Date(date);
+    const plop = new Date(newDate.setDate(newDate.getDate() + days));
+    return new Date(plop.setMinutes(newDate.getDate() + minutes));
+  }
+
   return (
     <motion.div
       key="checkin"
@@ -88,7 +95,7 @@ const Checkin: FunctionComponent<PageProps> = ({ data }) => {
         <main className={styles.itinerary}>
           <div className={styles.checkincard}>
             <Card>
-              <FlightHeading />
+              <FlightDateHeading date={arrivalDateTime} />
               <FlightCard
                 arrivalDateTime={arrivalDateTime}
                 departureDateTime={departureDateTime}
@@ -123,11 +130,11 @@ const Checkin: FunctionComponent<PageProps> = ({ data }) => {
           </div>
           <div className={styles.checkincard}>
             <Card>
-              <div className={flightStyles.flightheading}>Tue 21st Nov 2023</div>            
+              <FlightDateHeading date={addDays(departureDateTime, 5, 482)} />
               <FlightCard
-                arrivalDateTime={arrivalDateTime}
-                departureDateTime={departureDateTime}
-                flightNumber={"EZY2230"}
+                arrivalDateTime={addDays(arrivalDateTime, 5, 512)}
+                departureDateTime={addDays(departureDateTime, 5, 482)}
+                flightNumber={returnFlightNumber}
                 departureAirportCode={arrivalAirportCode}
                 departureAirportName={arrivalAirportName}
                 arrivalAirportCode={departureAirportCode}
