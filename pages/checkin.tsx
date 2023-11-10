@@ -40,6 +40,7 @@ const Checkin: FunctionComponent<PageProps> = ({ data }) => {
     arrivalAirportName,
     arrivalDateTime,
     returnFlightNumber,
+    delayedFlag,
   } = data[0]?.fields || {};
 
   const vars: Variants = {
@@ -101,6 +102,7 @@ const Checkin: FunctionComponent<PageProps> = ({ data }) => {
                 departureAirportName={departureAirportName}
                 arrivalAirportCode={arrivalAirportCode}
                 arrivalAirportName={arrivalAirportName}
+                delayedFlag={delayedFlag}
               />
               <div className={styles.checkinpassengers}>
                 <div className={styles.checkinlisthead}>
@@ -136,6 +138,7 @@ const Checkin: FunctionComponent<PageProps> = ({ data }) => {
                 departureAirportName={arrivalAirportName}
                 arrivalAirportCode={departureAirportCode}
                 arrivalAirportName={departureAirportName}
+                delayedFlag={false}
               />
               <div className={styles.checkinpassengers}>
                 <div className={styles.checkinlisthead}>

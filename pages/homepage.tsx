@@ -48,6 +48,7 @@ const Home: FunctionComponent<PageProps> = ({ history, data }) => {
     arrivalAirportCode,
     arrivalAirportName,
     arrivalDateTime,
+    delayedFlag,
   } = data[0]?.fields || {};
 
   const [value, setValue] = useState(0);
@@ -88,6 +89,7 @@ const Home: FunctionComponent<PageProps> = ({ history, data }) => {
               departureAirportName={departureAirportName}
               arrivalAirportCode={arrivalAirportCode}
               arrivalAirportName={arrivalAirportName}
+              delayedFlag={delayedFlag}
             />
             <FlightDates
               arrivalDateTime={arrivalDateTime}

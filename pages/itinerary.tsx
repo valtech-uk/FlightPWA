@@ -43,6 +43,7 @@ const Itinerary: FunctionComponent<PageProps> = ({ data }) => {
     arrivalAirportCode,
     arrivalAirportName,
     arrivalDateTime,
+    delayedFlag,
   } = data[0]?.fields || {};
 
   const itineraryVariants: Variants = {
@@ -126,6 +127,7 @@ const Itinerary: FunctionComponent<PageProps> = ({ data }) => {
                 departureAirportName={departureAirportName}
                 arrivalAirportCode={arrivalAirportCode}
                 arrivalAirportName={arrivalAirportName}
+                delayedFlag={delayedFlag}
               />
               <FlightDates
                 arrivalDateTime={arrivalDateTime}

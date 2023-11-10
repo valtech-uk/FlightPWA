@@ -37,6 +37,7 @@ const Checkincomplete: FunctionComponent<PageProps> = ({ data }) => {
     arrivalAirportCode,
     arrivalAirportName,
     arrivalDateTime,
+    delayedFlag,
   } = data[0]?.fields || {};
 
   const vars: Variants = {
@@ -106,6 +107,7 @@ const Checkincomplete: FunctionComponent<PageProps> = ({ data }) => {
                 departureAirportName={arrivalAirportName}
                 arrivalAirportCode={departureAirportCode}
                 arrivalAirportName={departureAirportName}
+                delayedFlag={delayedFlag}
               />
               <br />
               <div className={styles.divider} />

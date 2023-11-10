@@ -2,6 +2,7 @@ import React, { FunctionComponent } from "react";
 import styles from "../../styles/flight.module.css";
 import FlightIcon from "../../icons/FlightIcon";
 import moment from "moment";
+import InfoIcon from "../../icons/InfoIcon";
 
 type FlightCardProps = {
   flightNumber: string;
@@ -11,6 +12,7 @@ type FlightCardProps = {
   arrivalAirportCode: string;
   arrivalAirportName: string;
   arrivalDateTime: Date;
+  delayedFlag?: boolean;
 };
 
 const FlightCard: FunctionComponent<FlightCardProps> = ({
@@ -21,6 +23,7 @@ const FlightCard: FunctionComponent<FlightCardProps> = ({
   arrivalAirportName,
   departureAirportName,
   arrivalAirportCode,
+  delayedFlag = false,
 }) => {
   return (
     <>
@@ -32,6 +35,12 @@ const FlightCard: FunctionComponent<FlightCardProps> = ({
         </div>
         <div className={styles.flightcode}>{arrivalAirportCode}</div>
       </div>
+      {delayedFlag && (
+        <div className={styles.delayed}>
+          <InfoIcon />
+          <span>Flight delayed</span>
+        </div>
+      )}
       <div className={styles.flightrow1}>
         <div className={styles.flightdepart}>
           <div>Depart &nbsp; {moment(departureDateTime).format("HH:mm")}</div>
