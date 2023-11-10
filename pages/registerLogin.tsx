@@ -1,21 +1,16 @@
-import {FunctionComponent, ReactHTML, useEffect, useRef} from "react";
-import { PassageElement } from '@passageidentity/passage-elements';
+import {FunctionComponent, useEffect, useRef} from "react";
+// import { PassageElement } from '@passageidentity/passage-elements';
 import {BeforeAuthCallback, OnSuccessCallback} from "@passageidentity/passage-auth";
 
-declare global {
-    namespace JSX {
-        interface IntrinsicElements {
-            'passage-auth': ReactHTML['div'] & {
-                appId?: string;
-                onSuccess?: OnSuccessCallback
-                beforeAuth?: BeforeAuthCallback
-                lang: string,
-                defaultCountryCode?: string,
-                theme?: 'light' | 'dark' | 'auto',
-            };
-        }
-    }
+interface PassageElement extends HTMLElement {
+    appId?: string
+    onSuccess?: OnSuccessCallback
+    beforeAuth?: BeforeAuthCallback
+    lang: string,
+    defaultCountryCode?: string,
+    theme?: 'light' | 'dark' | 'auto',
 }
+
 const RegisterLogin: FunctionComponent = () => {
     const passageAuthRef = useRef<PassageElement | null>(null);
 
