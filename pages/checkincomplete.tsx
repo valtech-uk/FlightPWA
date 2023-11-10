@@ -11,6 +11,7 @@ import Card from "../components/general/card";
 import FlightCard from "../components/flight/FlightCard";
 import { createClient } from "contentful";
 import LinkButton from "../components/general/linkButton";
+import FlightDateHeading from "../components/flight/FlightDateHeading";
 
 export async function getStaticProps() {
   const client = createClient({
@@ -96,7 +97,7 @@ const Checkincomplete: FunctionComponent<PageProps> = ({ data }) => {
           <div className={styles.checkincard}>
             <Card>
               <div className={flightStyles.gatecloses}>Gate closes</div>
-              <div className={flightStyles.flightheading}>Fri 17 Nov 05:35</div>
+              <FlightDateHeading date={departureDateTime} />
               <FlightCard
                 arrivalDateTime={arrivalDateTime}
                 departureDateTime={departureDateTime}

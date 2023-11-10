@@ -183,8 +183,8 @@
 }
 
 .cardimage {
-  margin: 0 -1rem 1rem;
-  width: calc(100% + 2rem);
+  margin: 0 -1.25rem 1rem;
+  width: calc(100% + 2.5rem);
 }
 
 .cardimage img {
@@ -214,7 +214,7 @@
 }
 
 .itinerarycardsub {
-  padding: 1rem;
+  padding: 1.5rem 1rem;
 }
 
 .itinerarycardsub + .itinerarycardsub {
@@ -254,7 +254,7 @@
 }
 
 .checkincard {
-  padding: 1rem;
+  padding: 1.5rem 1rem;
 }
 
 .checkincard + .checkincard {

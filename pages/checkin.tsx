@@ -1,4 +1,4 @@
-import React, { FunctionComponent } from "react";
+import React, { FunctionComponent, useEffect, useState } from "react";
 import BackButton from "../components/general/backButton";
 import styles from "../styles/common.module.css";
 import flightStyles from "../styles/flight.module.css";
@@ -10,9 +10,10 @@ import Head from "next/head";
 import LinkButton from "../components/general/linkButton";
 import UserIcon from "../icons/UserIcon";
 import Card from "../components/general/card";
-import FlightHeading from "../components/flight/FlightHeading";
 import FlightCard from "../components/flight/FlightCard";
 import { createClient } from "contentful";
+import FlightDateHeading from "../components/flight/FlightDateHeading";
+import { addDays } from "../utilities/addDays";
 
 export async function getStaticProps() {
   const client = createClient({
@@ -38,6 +39,7 @@ const Checkin: FunctionComponent<PageProps> = ({ data }) => {
     arrivalAirportCode,
     arrivalAirportName,
     arrivalDateTime,
+    returnFlightNumber,
   } = data[0]?.fields || {};
 
   const vars: Variants = {
@@ -69,93 +71,101 @@ const Checkin: FunctionComponent<PageProps> = ({ data }) => {
 
   return (
   <PrivateRoute>
-    <Head>
-      <meta name="theme-color" content="#ffffff" />
-    </Head>
-    <div className={`${styles.container} ${styles.containerwhite}`}>
-      <header className={styles.header}>
-        <BackButton />
-        <div className={styles.headertitle}>Check-in</div>
-        <div className={styles.headericon}>
-          <UserIcon />
-        </div>
-      </header>
-      <main className={styles.itinerary}>
-        <div className={styles.checkincard}>
-          <Card>
-            <FlightHeading />
-            <FlightCard
-              arrivalDateTime={arrivalDateTime}
-              departureDateTime={departureDateTime}
-              flightNumber={flightNumber}
-              departureAirportCode={departureAirportCode}
-              departureAirportName={departureAirportName}
-              arrivalAirportCode={arrivalAirportCode}
-              arrivalAirportName={arrivalAirportName}
-            />
-            <div className={styles.checkinpassengers}>
-              <div className={styles.checkinlisthead}>
-                Passengers checked-in
-              </div>
-              <div className={styles.checkinlist}>
-                <div className={styles.checkinlistname}>Brandon Smith</div>
-                <div className={styles.checkinlistcta}>
-                  <LinkButton href="/checkincomplete" size="small">
-                    View boarding pass
-                  </LinkButton>
+    <motion.div
+      key="checkin"
+      variants={vars}
+      animate="in"
+      initial="initial"
+      exit="out"
+    >
+      <Head>
+        <meta name="theme-color" content="#ffffff" />
+      </Head>
+      <div className={`${styles.container} ${styles.containerwhite}`}>
+        <header className={styles.header}>
+          <BackButton />
+          <div className={styles.headertitle}>Check-in</div>
+          <div className={styles.headericon}>
+            <UserIcon />
+          </div>
+        </header>
+        <main className={styles.itinerary}>
+          <div className={styles.checkincard}>
+            <Card>
+              <FlightDateHeading date={departureDateTime} />
+              <FlightCard
+                arrivalDateTime={arrivalDateTime}
+                departureDateTime={departureDateTime}
+                flightNumber={flightNumber}
+                departureAirportCode={departureAirportCode}
+                departureAirportName={departureAirportName}
+                arrivalAirportCode={arrivalAirportCode}
+                arrivalAirportName={arrivalAirportName}
+              />
+              <div className={styles.checkinpassengers}>
+                <div className={styles.checkinlisthead}>
+                  Passengers checked-in
+                </div>
+                <div className={styles.checkinlist}>
+                  <div className={styles.checkinlistname}>Brandon Smith</div>
+                  <div className={styles.checkinlistcta}>
+                    <LinkButton href="/checkincomplete" size="small">
+                      View boarding pass
+                    </LinkButton>
+                  </div>
+                </div>
+                <div className={styles.checkinlist}>
+                  <div className={styles.checkinlistname}>Sarah Smith</div>
+                  <div className={styles.checkinlistcta}>
+                    <LinkButton href="/checkincomplete" size="small">
+                      View boarding pass
+                    </LinkButton>
+                  </div>
                 </div>
               </div>
-              <div className={styles.checkinlist}>
-                <div className={styles.checkinlistname}>Sarah Smith</div>
-                <div className={styles.checkinlistcta}>
-                  <LinkButton href="/checkincomplete" size="small">
-                    View boarding pass
-                  </LinkButton>
+            </Card>
+          </div>
+          <div className={styles.checkincard}>
+            <Card>
+              <FlightDateHeading date={addDays(departureDateTime, 5, 482)} />
+              <FlightCard
+                arrivalDateTime={addDays(arrivalDateTime, 5, 512)}
+                departureDateTime={addDays(departureDateTime, 5, 482)}
+                flightNumber={returnFlightNumber}
+                departureAirportCode={arrivalAirportCode}
+                departureAirportName={arrivalAirportName}
+                arrivalAirportCode={departureAirportCode}
+                arrivalAirportName={departureAirportName}
+              />
+              <div className={styles.checkinpassengers}>
+                <div className={styles.checkinlisthead}>
+                  Passengers checked-in
+                </div>
+                <div className={styles.checkinlist}>
+                  <div className={styles.checkinlistname}>Brandon Smith</div>
+                  <div className={styles.checkinlistcta}>
+                    <LinkButton href="/checkincomplete" size="small">
+                      View boarding pass
+                    </LinkButton>
+                  </div>
+                </div>
+                <div className={styles.checkinlist}>
+                  <div className={styles.checkinlistname}>Sarah Smith</div>
+                  <div className={styles.checkinlistcta}>
+                    <LinkButton href="/checkincomplete" size="small">
+                      View boarding pass
+                    </LinkButton>
+                  </div>
                 </div>
               </div>
-            </div>
-          </Card>
-        </div>
-        <div className={styles.checkincard}>
-          <Card>
-            <div className={flightStyles.flightheading}>Tue 21st Nov 2023</div>            
-            <FlightCard
-              arrivalDateTime={arrivalDateTime}
-              departureDateTime={departureDateTime}
-              flightNumber={"EZY2230"}
-              departureAirportCode={arrivalAirportCode}
-              departureAirportName={arrivalAirportName}
-              arrivalAirportCode={departureAirportCode}
-              arrivalAirportName={departureAirportName}
-            />
-            <div className={styles.checkinpassengers}>
-              <div className={styles.checkinlisthead}>
-                Passengers checked-in
-              </div>
-              <div className={styles.checkinlist}>
-                <div className={styles.checkinlistname}>Brandon Smith</div>
-                <div className={styles.checkinlistcta}>
-                  <LinkButton href="/checkincomplete" size="small">
-                    View boarding pass
-                  </LinkButton>
-                </div>
-              </div>
-              <div className={styles.checkinlist}>
-                <div className={styles.checkinlistname}>Sarah Smith</div>
-                <div className={styles.checkinlistcta}>
-                  <LinkButton href="/checkincomplete" size="small">
-                    View boarding pass
-                  </LinkButton>
-                </div>
-              </div>
-            </div>
-          </Card>
-        </div>
-      </main>
-      <style jsx global>
-        {globalStyles}
-      </style>
-    </div>
+            </Card>
+          </div>
+        </main>
+        <style jsx global>
+          {globalStyles}
+        </style>
+      </div>
+    </motion.div>
   </PrivateRoute>
   );
 };
