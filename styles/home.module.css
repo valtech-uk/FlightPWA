@@ -18,15 +18,12 @@
 }
 
 .homecardsub {
-  margin: 1rem -1.25rem;
-  width: calc(100% + 2.5rem);
+  margin: 1rem -1rem;
+  width: calc(100% + 2rem);
 }
 
 .hometabs {
   padding: 1rem 0 0 0;
-}
-
-.bookflights {
 }
 
 .bookflightshead {
