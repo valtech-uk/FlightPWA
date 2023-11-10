@@ -1,5 +1,4 @@
 import {FunctionComponent, useEffect, useRef} from "react";
-// import { PassageElement } from '@passageidentity/passage-elements';
 import {BeforeAuthCallback, OnSuccessCallback} from "@passageidentity/passage-auth";
 
 interface PassageElement extends HTMLElement {
