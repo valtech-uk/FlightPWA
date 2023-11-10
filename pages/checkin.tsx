@@ -12,6 +12,7 @@ import Card from "../components/general/card";
 import FlightCard from "../components/flight/FlightCard";
 import { createClient } from "contentful";
 import FlightDateHeading from "../components/flight/FlightDateHeading";
+import { addDays } from "../utilities/addDays";
 
 export async function getStaticProps() {
   const client = createClient({
@@ -66,12 +67,6 @@ const Checkin: FunctionComponent<PageProps> = ({ data }) => {
       },
     },
   };
-
-  function addDays(date: Date, days: number, minutes: number) {
-    const newDate = new Date(date);
-    const plop = new Date(newDate.setDate(newDate.getDate() + days));
-    return new Date(plop.setMinutes(newDate.getDate() + minutes));
-  }
 
   return (
     <motion.div

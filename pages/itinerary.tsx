@@ -16,6 +16,8 @@ import FlightCard from "../components/flight/FlightCard";
 import FlightDates from "../components/flight/FlightDates";
 import LinkButton from "../components/general/linkButton";
 import { createClient } from "contentful";
+import FlightDateHeading from "../components/flight/FlightDateHeading";
+import { addDays } from "../utilities/addDays";
 
 export async function getStaticProps() {
   const client = createClient({
@@ -115,7 +117,7 @@ const Itinerary: FunctionComponent<PageProps> = ({ data }) => {
           </div>
           <div className={styles.itinerarycardsub}>
             <Card>
-              <FlightHeading />
+              <FlightDateHeading date={departureDateTime} />
               <FlightCard
                 arrivalDateTime={arrivalDateTime}
                 departureDateTime={departureDateTime}
