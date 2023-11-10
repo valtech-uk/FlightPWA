@@ -1,7 +1,7 @@
 import { ReactHTML } from 'react';
 import {BeforeAuthCallback, OnSuccessCallback} from "@passageidentity/passage-elements";
 
-interface IntrinsicElements {
+export interface IntrinsicElements {
     // 'passage-auth': ReactHTML['div'];
     'passage-auth': ReactHTML['div'] & {
         appId?: string;
