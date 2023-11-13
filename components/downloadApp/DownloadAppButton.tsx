@@ -23,19 +23,13 @@ const DownloadAppButton: FC = () => {
     };
   }, []);
 
-  console.log(deferredPrompt);
-
   const handleInstallPrompt = async () => {
     if (deferredPrompt) {
       await deferredPrompt.prompt();
     }
   };
 
-  return (
-    <>
-      <Button onClick={handleInstallPrompt}>Download</Button>
-    </>
-  );
+  return <Button onClick={handleInstallPrompt}>Download</Button>;
 };
 
 export default DownloadAppButton;

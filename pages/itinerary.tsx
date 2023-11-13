@@ -18,6 +18,7 @@ import LinkButton from "../components/general/linkButton";
 import { createClient } from "contentful";
 import FlightDateHeading from "../components/flight/FlightDateHeading";
 import { addDays } from "../utilities/addDays";
+import PrivateRoute from "../components/general/privateRoute";
 
 export async function getStaticProps() {
   const client = createClient({
@@ -74,80 +75,82 @@ const Itinerary: FunctionComponent<PageProps> = ({ data }) => {
   };
 
   return (
-    <motion.div
-      key="itinerary"
-      variants={itineraryVariants}
-      animate="in"
-      initial="initial"
-      exit="out"
-    >
-      <Head>
-        <meta name="theme-color" content="#ffffff" />
-      </Head>
-      <div className={`${styles.container} ${styles.containerwhite}`}>
-        <header className={styles.header}>
-          <BackButton />
-          <div className={styles.headertitle}>My Itinerary</div>
-          <div className={styles.headericon}>
-            <UserIcon />
-          </div>
-        </header>
-        <main className={styles.itinerary}>
-          <div className={styles.itineraryimage}>
-            <img src="/alicante.png" />
-          </div>
-          <div className={styles.itinerarycard}>
-            <Card>
-              <FlightCountdownItinerary />
-              <div className={styles.divider} />
-              <BookingReference />
-            </Card>
-          </div>
-          <div className={styles.itinerarycardsub}>
-            <Card>
-              <div className={styles.itinerarysiri}>
-                <div className={styles.itinerarysiritext}>
-                  Add a shortcut to get flight updates via Siri
+    <PrivateRoute>
+      <motion.div
+        key="itinerary"
+        variants={itineraryVariants}
+        animate="in"
+        initial="initial"
+        exit="out"
+      >
+        <Head>
+          <meta name="theme-color" content="#ffffff" />
+        </Head>
+        <div className={`${styles.container} ${styles.containerwhite}`}>
+          <header className={styles.header}>
+            <BackButton />
+            <div className={styles.headertitle}>My Itinerary</div>
+            <div className={styles.headericon}>
+              <UserIcon />
+            </div>
+          </header>
+          <main className={styles.itinerary}>
+            <div className={styles.itineraryimage}>
+              <img src="/alicante.png" />
+            </div>
+            <div className={styles.itinerarycard}>
+              <Card>
+                <FlightCountdownItinerary />
+                <div className={styles.divider} />
+                <BookingReference />
+              </Card>
+            </div>
+            <div className={styles.itinerarycardsub}>
+              <Card>
+                <div className={styles.itinerarysiri}>
+                  <div className={styles.itinerarysiritext}>
+                    Add a shortcut to get flight updates via Siri
+                  </div>
+                  <a href="#" className={styles.itineraryaddsiri}>
+                    <img src="/siri.png" />
+                    <span>Add to Siri</span>
+                  </a>
                 </div>
-                <a href="#" className={styles.itineraryaddsiri}>
-                  <img src="/siri.png" />
-                  <span>Add to Siri</span>
-                </a>
-              </div>
-            </Card>
-          </div>
-          <div className={styles.itinerarycardsub}>
-            <Card>
-              <FlightDateHeading date={departureDateTime} />
-              <FlightCard
-                arrivalDateTime={arrivalDateTime}
-                departureDateTime={departureDateTime}
-                flightNumber={flightNumber}
-                departureAirportCode={departureAirportCode}
-                departureAirportName={departureAirportName}
-                arrivalAirportCode={arrivalAirportCode}
-                arrivalAirportName={arrivalAirportName}
-                delayedFlag={delayedFlag}
-              />
-              <FlightDates
-                arrivalDateTime={arrivalDateTime}
-                departureDateTime={departureDateTime}
-              />
-              <div className={styles.divider} />
-              <FlightAddExtras />
-              <div className={styles.ctas}>
-                <LinkButton href="" style="secondary">
-                  Change flight
-                </LinkButton>
-              </div>
-            </Card>
-          </div>
-        </main>
-        <style jsx global>
-          {globalStyles}
-        </style>
-      </div>
-    </motion.div>
+              </Card>
+            </div>
+            <div className={styles.itinerarycardsub}>
+              <Card>
+                <FlightDateHeading date={departureDateTime} />
+                <FlightCard
+                  arrivalDateTime={arrivalDateTime}
+                  departureDateTime={departureDateTime}
+                  flightNumber={flightNumber}
+                  departureAirportCode={departureAirportCode}
+                  departureAirportName={departureAirportName}
+                  arrivalAirportCode={arrivalAirportCode}
+                  arrivalAirportName={arrivalAirportName}
+                  delayedFlag={delayedFlag}
+                />
+                <FlightDates
+                  arrivalDateTime={arrivalDateTime}
+                  departureDateTime={departureDateTime}
+                />
+                <div className={styles.divider} />
+                <FlightAddExtras />
+                <div className={styles.ctas}>
+                  <LinkButton href="" style="secondary">
+                    Change flight
+                  </LinkButton>
+                </div>
+              </Card>
+            </div>
+          </main>
+          <style jsx global>
+            {globalStyles}
+          </style>
+        </div>
+      </motion.div>
+    </PrivateRoute>
   );
 };
 

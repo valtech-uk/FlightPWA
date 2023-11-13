@@ -17,10 +17,10 @@ export default function MyApp({ Component, pageProps }: AppProps) {
 
   return (
     <Transition>
-        <AppContextProvider>
-            <HeadComp />
-            <Component {...pageProps} key={asPath} history={ref.current} />
-        </AppContextProvider>
+      <AppContextProvider>
+        <HeadComp />
+        <Component {...pageProps} key={asPath} history={ref.current} />
+      </AppContextProvider>
     </Transition>
   );
 }
