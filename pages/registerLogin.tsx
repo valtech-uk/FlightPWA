@@ -28,7 +28,7 @@ const RegisterLogin: FunctionComponent = () => {
       }
       const style = document.createElement("style");
       style.innerHTML = _styles;
-      passageAuth.shadowRoot.querySelector("style").after(style);
+      passageAuth?.shadowRoot?.querySelector("style").after(style);
     });
   }, []);
 
@@ -40,10 +40,10 @@ const RegisterLogin: FunctionComponent = () => {
         </header>
         <div className={styles.logintabs}>
           <div>
-            <span>Login here.</span>
+            <span>Sign in</span>
           </div>
           <div>
-            <span>Register here.</span>
+            <span>Register</span>
           </div>
         </div>
         <div className={styles.logintabsspace} />

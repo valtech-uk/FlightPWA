@@ -78,11 +78,33 @@ input.input.input {
     line-height: 2.3;
 }
 .link.has-text-centered a.body-link[data-test="register-link"] {
-    left: calc(50% + 1rem);    
+    left: calc(50% + 1rem);
+    color: #fff;
+}
+.link.has-text-centered a.body-link[data-test="register-link"]::after {
+    content: 'Register';
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    display: block;
+    left: 0;
+    text-align: left;
+    color: #000;
 }
 .link.has-text-centered a.body-link[data-test="login-link"] {
     right: calc(50% + 1rem);
     justify-content: flex-end;
+    color: #fff;
+}
+.link.has-text-centered a.body-link[data-test="login-link"]::after {
+    content: 'Sign in';
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    display: block;
+    left: 0;
+    text-align: right;
+    color: #000;
 }
 .link.has-text-centered > div {
     color: transparent;
