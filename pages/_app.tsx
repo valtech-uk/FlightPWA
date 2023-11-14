@@ -6,6 +6,7 @@ import "../styles/transitions.module.css";
 import HeadComp from "../components/general/head";
 import { useRouter } from "next/router";
 import { useEffect, useRef } from "react";
+import PrivateRoute from "../components/general/privateRoute";
 
 export default function MyApp({ Component, pageProps }: AppProps) {
   const { asPath } = useRouter();
@@ -15,11 +16,18 @@ export default function MyApp({ Component, pageProps }: AppProps) {
     ref.current = asPath;
   }, [asPath]);
 
+  const isLoginPage = asPath === "/";
+
   return (
     <Transition>
       <AppContextProvider>
         <HeadComp />
-        <Component {...pageProps} key={asPath} history={ref.current} />
+        {isLoginPage ?
+           <Component {...pageProps} key={asPath} history={ref.current}/> :
+            <PrivateRoute>
+              <Component {...pageProps} key={asPath} history={ref.current}/>
+            </PrivateRoute>
+        }
       </AppContextProvider>
     </Transition>
   );

@@ -2,7 +2,6 @@ import React, { FunctionComponent } from "react";
 import BackButton from "../components/general/backButton";
 import styles from "../styles/common.module.css";
 import globalStyles from "../styles/global";
-import PrivateRoute from "../components/general/privateRoute";
 import { Variants, motion } from "framer-motion";
 import { PageProps } from "../types";
 import Head from "next/head";
@@ -73,7 +72,6 @@ const Checkin: FunctionComponent<PageProps> = ({ data }) => {
   };
 
   return (
-    <PrivateRoute>
       <motion.div
         key="checkin"
         variants={vars}
@@ -175,7 +173,6 @@ const Checkin: FunctionComponent<PageProps> = ({ data }) => {
           </style>
         </div>
       </motion.div>
-    </PrivateRoute>
   );
 };
 

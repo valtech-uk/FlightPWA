@@ -20,7 +20,6 @@ import Tab from "@mui/material/Tab";
 import tabsEjStyles from "../styles/tabsEjStyles";
 import CustomTabPanel from "../components/general/customTabPanel";
 import SearchIcon from "../icons/SearchIcon";
-import PrivateRoute from "../components/general/privateRoute";
 import { useAppContext } from "../context/appContext";
 
 export async function getStaticProps() {
@@ -58,7 +57,7 @@ const Home: FunctionComponent<PageProps> = ({ history, data }) => {
   };
 
   return (
-    <PrivateRoute>
+      <>
       <Head>
         <meta name="theme-color" content="#ff6600" />
       </Head>
@@ -160,7 +159,7 @@ const Home: FunctionComponent<PageProps> = ({ history, data }) => {
         </style>
       </div>
       <BottomNavigation current={"index"} />
-    </PrivateRoute>
+      </>
   );
 };
 

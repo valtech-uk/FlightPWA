@@ -1,6 +1,6 @@
 "use client";
 
-import { FunctionComponent, ReactNode, useEffect, useState } from "react";
+import React, { FunctionComponent, ReactNode, useEffect, useState } from "react";
 import { useCurrentUser } from "../../hooks/useCurrentUser";
 import { useRouter } from "next/router";
 import styles from "../../styles/common.module.css";
@@ -20,7 +20,7 @@ const PrivateRoute: FunctionComponent<PrivateRouteProps> = ({ children }) => {
 
     if (!isLoading && !isAuthorized) {
       redirectTimeout = setTimeout(() => {
-        router.push("/registerLogin");
+        router.push("/");
       }, countdown * 1000);
 
       countdownInterval = setInterval(() => {
