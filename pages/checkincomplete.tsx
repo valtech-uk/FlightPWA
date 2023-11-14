@@ -13,7 +13,6 @@ import { createClient } from "contentful";
 import LinkButton from "../components/general/linkButton";
 import FlightDateHeading from "../components/flight/FlightDateHeading";
 import { useAppContext } from "../context/appContext";
-import PrivateRoute from "../components/general/privateRoute";
 
 export async function getStaticProps() {
   const client = createClient({
@@ -72,7 +71,6 @@ const Checkincomplete: FunctionComponent<PageProps> = ({ data }) => {
   };
 
   return (
-    <PrivateRoute>
       <motion.div
         key="checkincomplete"
         variants={vars}
@@ -172,7 +170,6 @@ const Checkincomplete: FunctionComponent<PageProps> = ({ data }) => {
           </style>
         </div>
       </motion.div>
-    </PrivateRoute>
   );
 };
 

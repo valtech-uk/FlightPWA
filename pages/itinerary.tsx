@@ -75,7 +75,6 @@ const Itinerary: FunctionComponent<PageProps> = ({ data }) => {
   };
 
   return (
-    <PrivateRoute>
       <motion.div
         key="itinerary"
         variants={itineraryVariants}
@@ -150,7 +149,6 @@ const Itinerary: FunctionComponent<PageProps> = ({ data }) => {
           </style>
         </div>
       </motion.div>
-    </PrivateRoute>
   );
 };
 
