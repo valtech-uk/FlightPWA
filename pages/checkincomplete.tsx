@@ -10,7 +10,7 @@ import UserIcon from "../icons/UserIcon";
 import Card from "../components/general/card";
 import FlightCard from "../components/flight/FlightCard";
 import { createClient } from "contentful";
-import LinkButton from "../components/general/linkButton";
+import AddToGoogleWallet from "../components/wallet/AddToGoogleWallet";
 import FlightDateHeading from "../components/flight/FlightDateHeading";
 import { useAppContext } from "../context/appContext";
 import PrivateRoute from "../components/general/privateRoute";
@@ -161,8 +161,7 @@ const Checkincomplete: FunctionComponent<PageProps> = ({ data }) => {
                 </div>
                 <div className={styles.divider} />
                 <div className={flightStyles.addtowallet}>
-                  <img src="/wallet.png" />
-                  <LinkButton href="">Add to Apple wallet</LinkButton>
+                  <AddToGoogleWallet>Add to Google wallet</AddToGoogleWallet>
                 </div>
               </Card>
             </div>
