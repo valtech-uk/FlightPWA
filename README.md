@@ -9,3 +9,6 @@ This is a starter template for [Learn Next.js](https://nextjs.org/learn).
 
 **[Passage console page](https://console.passage.id/)** - Here we can change authentication origin (prod/dev), app name and manage a lot of other things
 
+**Note:** for future it would be useful to have 2 instances of app in passage console.
+One for dev, and one for prod. Dev would be with authentication origin as https://localhost:3000, and prod - 
+with https://flight-pwa.vercel.app/ (as it is now) and other different settings. And to manage this instance through the .env.NEXT_PUBLIC_PASSAGE_APP_ID (now the app_id is hardcoded in index file, passageAuth.appId)
