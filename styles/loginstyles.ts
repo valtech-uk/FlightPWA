@@ -132,11 +132,70 @@ input.input.input {
 .passage-profile a[role=button] {
     font-weight: 400 !important;
 }
-.grid-stack.register {
-    height: 125px !important;
+.grid-stack.register,
+.grid-stack.register div {
+    height: auto !important;
+    order: -1;
+    margin-bottom: 1rem;
+}
+.grid-stack.grid-stack .grid-stack-item.grid-stack-item {
+    position: static;
 }
 figure ~ .flex-row.flex-center button {
     margin: 0 .2rem !important;
     width: auto !important;
+}
+.identifier-form button.button.button {
+    position: relative;
+    color: transparent;
+}
+.identifier-form button.button.button::before {
+    position: absolute;    
+    display: inline-flex;
+    color: #fff;
+    left: 0;
+    top: 0;
+    height: 2.5rem;
+    line-height: 2.5rem;
+    width: 100%;
+    align-items: center;
+    justify-content: center;
+    transform: translateX(-9px);
+}
+.grid-stack.register + div button.button.button::before {
+    content: 'Register';
+}
+.auth-flex-container > .identifier-form button.button.button::before {
+    content: 'Sign in';
+}
+.auth-flex-container > .identifier-form + div > .identifier-form {
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+}
+.auth-flex-container > .identifier-form + div {
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+}
+.auth-flex-container .spacer.spacer {
+    display: none;
+}
+.grid-stack.register .label.label {
+    position: relative;
+    color: transparent;
+    display: block;
+}
+.grid-stack.register .label.label::before {
+    position: absolute;    
+    display: inline-block;
+    color: rgb(34, 34, 34);
+    left: 0;
+    top: 0;
+    height: 100%;
+    width: 100%;
+    align-items: center;
+    justify-content: center;
+    content: 'Full name';
 }
 `;
