@@ -72,7 +72,7 @@ const Home: FunctionComponent<PageProps> = ({ history, data }) => {
         <main className={styles.main}>
           <div className={homeStyles.personalisation}>
             <h1>Hello {context?.user?.username}</h1>
-            <h2>Where will you go next?</h2>
+            <h2>Where will you go next on this demo?</h2>
           </div>
 
           <div className={homeStyles.homemaincard}>
